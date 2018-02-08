@@ -1,0 +1,30 @@
+.bg-green {
+  background: #20C063;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 22px !important;
+  font-weight: bold;
+}
+
+.nav-top .nav-item a {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+.nav-item a:hover {
+  background-color: #10A75F !important;
+}
+/*-----------------------------------*/
+.navbar-green {
+  background-color: #20C063;
+}
+
+.btn-white {
+	background: white;
+}
+
+.navbar {
+	margin-bottom: 0 !important;
+}
