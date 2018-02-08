@@ -84,6 +84,10 @@ class ApiController extends Controller {
 		return view('api')->with('states', $states);
 	}
 
+	public function testApi($zipcode) {
+		return 'ddd';
+	}
+
 	public function demographics($location)
 	{	
 		$url = "http://www.zillow.com/webservice/GetDemographics.htm?zws-id=X1-ZWz18s9whswop7_8p8sy&".$location;
