@@ -84,8 +84,8 @@ class ApiController extends Controller {
 		return view('api')->with('states', $states);
 	}
 
-	public function testApi($zipcode) {
-		return 'ddd';
+	public function findSearchByZipcode($zipcode) {
+		return 'This is my ZipCode.';
 	}
 
 	public function demographics($location)
