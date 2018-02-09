@@ -86,6 +86,7 @@ class ApiController extends Controller {
 
 	public function findSearchByZipcode($zipcode) {
 		return 'This is my ZipCode.';
+		//rfghjk
 	}
 
 	public function demographics($location)

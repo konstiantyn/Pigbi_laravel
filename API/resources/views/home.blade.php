@@ -8,14 +8,11 @@
 			<div class="row">
 				<div class="col-xs-4 col-md-4">
 					<div class="thumbnail">
-						<div class="" style="background-image: url(https://thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/IS2zj1qyceuubu0000000000.jpg);">
-							<!-- <img src="" alt> -->
-						
+						<img src="https://thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/IS2zj1qyceuubu0000000000.jpg" alt>
 						<div class="caption">
 							<h3>Thumbnail label</h3>
 							<p>...</p>
 							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-						</div>
 						</div>
 					</div>
 				</div>
@@ -23,7 +20,71 @@
 					<div class="thumbnail">
 						<img src="https://thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/IS2zj1qyceuubu0000000000.jpg" alt>
 						<div class="caption">
+							<h2>Thumbnail label</h2>
+							<p>...</p>
+							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-4 col-md-4">
+					<div class="thumbnail" style="">
+						<img src="https://thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/IS2zj1qyceuubu0000000000.jpg" alt>
+						<div class="caption">
 							<h3>Thumbnail label</h3>
+							<p>...</p>
+							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4 col-md-4">
+					<div class="thumbnail">
+						<img src="https://thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/IS2zj1qyceuubu0000000000.jpg" alt>
+						<div class="caption">
+							<h3>Thumbnail label</h3>
+							<p>...</p>
+							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-4 col-md-4">
+					<div class="thumbnail">
+						<img src="https://thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/IS2zj1qyceuubu0000000000.jpg" alt>
+						<div class="caption">
+							<h2>Thumbnail label</h2>
+							<p>...</p>
+							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-4 col-md-4">
+					<div class="thumbnail" style="">
+						<img src="https://thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/IS2zj1qyceuubu0000000000.jpg" alt>
+						<div class="caption">
+							<h3>Thumbnail label</h3>
+							<p>...</p>
+							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4 col-md-4">
+					<div class="thumbnail">
+						<img src="https://thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/IS2zj1qyceuubu0000000000.jpg" alt>
+						<div class="caption">
+							<h3>Thumbnail label</h3>
+							<p>...</p>
+							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-4 col-md-4">
+					<div class="thumbnail">
+						<img src="https://thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/IS2zj1qyceuubu0000000000.jpg" alt>
+						<div class="caption">
+							<h2>Thumbnail label</h2>
 							<p>...</p>
 							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
 						</div>
@@ -42,7 +103,7 @@
 			</div>
 		</div>
 		<div class="col-xs-6">
-			<div id="map" class="map-div" style="width: 700px; height: 400px;"></div>
+			<div id="map" class="map-div col-xs-12" style="width: 100%; height: 860px;"></div>
 			<script>
 				var map;
 				function initMap() {
