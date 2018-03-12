@@ -26,7 +26,8 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background: #ddd;">
+<header style="position: fixed; width: 100%; height: 100px; z-index: 100;">
 	<nav class="navbar navbar-green" role="navigation" style="padding-right: 10px;">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -45,89 +46,88 @@
 				<li>
 					<button type="submit" class="btn navbar-btn btn-white">Sign in</button>
 		            <button type="submit" class="btn navbar-btn btn-success">Register</button>
-		            
 				</li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</nav>
-	<div class="navbar navbar-collapse">
+	<div class="navbar navbar-collapse" style="background: #fff;">
 		<form class="navbar-form navbar-left" role="search">
-			<div class="form-group">
+			<div class="form-group col-xs-9">
 				<input type="text" class="form-control" placeholder="Search">
 			</div>
-			<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+			<button type="submit" class="btn btn-default col-xs-3"><span class="glyphicon glyphicon-search"></span></button>
 		</form>
-		<ul class="nav navbar-nav">
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Any Price<b class="caret"></b></a>
-				<ul class="dropdown-menu">
-					<li><a href="#">Action</a></li>
-					<li><a href="#">Another action</a></li>
-					<li><a href="#">Something else here</a></li>
-					<li class="divider"></li>
-					<li><a href="#">Separated link</a></li>
-					<li class="divider"></li>
-					<li><a href="#">One more separated link</a></li>
-				</ul>
-			</li>
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">All Beds<b class="caret"></b></a>
-				<ul class="dropdown-menu">
-					<li><a href="#">Action</a></li>
-					<li><a href="#">Another action</a></li>
-					<li><a href="#">Something else here</a></li>
-					<li class="divider"></li>
-					<li><a href="#">Separated link</a></li>
-					<li class="divider"></li>
-					<li><a href="#">One more separated link</a></li>
-				</ul>
-			</li>
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pets<b class="caret"></b></a>
-				<ul class="dropdown-menu">
-					<li><a href="#">Action</a></li>
-					<li><a href="#">Another action</a></li>
-					<li><a href="#">Something else here</a></li>
-					<li class="divider"></li>
-					<li><a href="#">Separated link</a></li>
-					<li class="divider"></li>
-					<li><a href="#">One more separated link</a></li>
-				</ul>
-			</li>
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">All Rental Types<b class="caret"></b></a>
-				<ul class="dropdown-menu">
-					<li><a href="#">Action</a></li>
-					<li><a href="#">Another action</a></li>
-					<li><a href="#">Something else here</a></li>
-					<li class="divider"></li>
-					<li><a href="#">Separated link</a></li>
-					<li class="divider"></li>
-					<li><a href="#">One more separated link</a></li>
-				</ul>
-			</li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right" style="padding-right: 20px;">
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">All Rental Types<b class="caret"></b></a>
-				<ul class="dropdown-menu">
-					<li><a href="#">Action</a></li>
-					<li><a href="#">Another action</a></li>
-					<li><a href="#">Something else here</a></li>
-					<li class="divider"></li>
-					<li><a href="#">Separated link</a></li>
-					<li class="divider"></li>
-					<li><a href="#">One more separated link</a></li>
-				</ul>
-			</li>
-			<li>
-				<button type="submit" class="btn navbar-btn btn-success	">Save Search</button>
-			</li>
-		</ul>
+		<div class="sub-menu-options">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Any Price<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li class="divider"></li>
+						<li><a href="#">One more separated link</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">All Beds<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li class="divider"></li>
+						<li><a href="#">One more separated link</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pets<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li class="divider"></li>
+						<li><a href="#">One more separated link</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">All Rental Types<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li class="divider"></li>
+						<li><a href="#">One more separated link</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right" style="padding-right: 20px;">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li class="divider"></li>
+						<li><a href="#">One more separated link</a></li>
+					</ul>
+				</li>
+				<li>
+					<button type="submit" class="btn navbar-btn btn-success">Save Search</button>
+				</li>
+			</ul>	
+		</div>
 	</div>
-
-	@yield('content')
-
-	
+</header>
+@yield('content')
 </body>
 </html>

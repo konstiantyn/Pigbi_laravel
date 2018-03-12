@@ -25,6 +25,302 @@
 	background: white;
 }
 
-.navbar {
-	margin-bottom: 0 !important;
+.navbar {	margin-bottom: 0 !important;}
+
+ul {list-style: none; padding: 0px;}
+ul.show-list li {
+  padding: 0px !important;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
 }
+
+.cardItem {
+  border-radius: 5px 5px 5px 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+  border: 1px solid #fff;
+  background: #fff;
+}
+
+.cardItem:hover {cursor: pointer;}
+
+.cardItem button.favorite-btn {
+  position: absolute;
+  z-index: 1;
+  right: 1px;
+  top: 1px;
+  font-size: 24px;
+  outline: 0;
+  background: 0 0;
+  border: 0;
+  color: #fff;
+  font-weight: 700;
+}
+
+.cardfooter {
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-content: center;
+}
+
+.cardfooter button {
+  width: 100%;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  line-height: 40px;
+}
+
+.cardfooter button.newPending {background: #f39754;}
+.cardfooter button.applicationApproved {background: #20c063;}
+.cardfooter button.conditionalApproval {background: #f39754;}
+.cardfooter button.conditionalAccepted {background: #20c063;}
+.cardfooter button.approvedLeased {background: #20c063;}
+
+.gallary-show {
+  position: relative;
+}
+
+.gallary-show img {
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+  height: 180px;
+}
+.gallary-show ul li {
+  line-height:15px;
+  padding: 0px !important;
+  margin-bottom:1px !important;
+}
+.gallary-show ul li span {padding-left: 2px; padding-right: 2px;}
+.gallary-show ul li span.new {background-color: rgba(32,192,99,.7);}
+.gallary-show ul li span.petFriendly {background: rgba(71,78,82,.7);}
+.gallary-show ul li span.forSaleByOwner {background: rgba(71,78,82,.7);}
+.gallary-show ul li span.newCommunity {background: rgba(71,78,82,.7);}
+
+.gallary-show ul {
+  list-style: none;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  color: white;
+  border-radius: 5px 0 0 0;
+}
+
+.map-div {
+  height: 100%;
+  width: 100%;
+  bottom: 0px;
+  overflow: hidden;
+}
+
+.map-label {
+  background: #25d025;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px;
+  border-radius: 1000px;
+  width: auto;
+}
+
+.backgroundBasic {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.cardDetails {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.rental-price {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.housedetail li{
+  display: inline!important;
+  vertical-align: baseline;
+  padding-right: 10px;
+}
+
+.addressDetail {
+  font-size: 15px;
+}
+
+
+@media screen and (max-width: 500px) {
+  .map-column {
+    position: relative !important;
+    display: none;
+  }
+  .sub-menu-options {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .cardfooter {font-size: 12px;}
+  .cardfooter button {padding-left: 1px; padding-right: 1px;}
+}
+
+
+@font-face{font-family:Truliacons;src:url(//static.trulia-cdn.com/images/fonts/Truliacons_20160922/fontello.eot);src:url(//static.trulia-cdn.com/images/fonts/Truliacons_20160922/fontello.eot?#iefix) format("embedded-opentype"),url(//static.trulia-cdn.com/images/fonts/Truliacons_20160922/fontello.woff) format("woff"),url(//static.trulia-cdn.com/images/fonts/Truliacons_20160922/fontello.ttf) format("truetype"),url(//static.trulia-cdn.com/images/fonts/Truliacons_20160922/fontello.svg#Truliacons) format("svg");font-weight:400;font-style:normal;font-display:swap}
+.iconActivelife:before,.iconAddress:before,.iconAffordability:before,.iconAgent:before,.iconAir:before,.iconAndroid:before,.iconApple:before,.iconAttach:before,.iconAttention:before,.iconBasket:before,.iconBath:before,.iconBed:before,.iconBell:before,.iconBike:before,.iconBlock:before,.iconBlog:before,.iconBookmark:before,.iconCalendar:before,.iconCamera:before,.iconCancel:before,.iconCar:before,.iconCat:before,.iconChartArea:before,.iconChartBar:before,.iconChartLine:before,.iconChartPie:before,.iconChat:before,.iconCheck:before,.iconCircledHelp:before,.iconCity:before,.iconClock:before,.iconCloud:before,.iconCoffee:before,.iconCog:before,.iconComment:before,.iconCreditCard:before,.iconCrime:before,.iconCup:before,.iconDirection:before,.iconDocs:before,.iconDog:before,.iconDown:before,.iconDownOpen:before,.iconExport:before,.iconEye:before,.iconFHEO:before,.iconFacebook:before,.iconFlag:before,.iconFlight:before,.iconFloorplan:before,.iconFolder:before,.iconFood:before,.iconForward:before,.iconFuel:before,.iconGlobe:before,.iconGooglePlus:before,.iconGraduationCap:before,.iconHeart:before,.iconHeartActive:before,.iconHeartEmpty:before,.iconHeartInactive:before,.iconHelp:before,.iconHome:before,.iconHomeWorth:before,.iconHourGlass:before,.iconInbox:before,.iconInfo:before,.iconInstagram:before,.iconLeaf:before,.iconLeft:before,.iconLeftOpen:before,.iconLinkedin:before,.iconList:before,.iconLocation:before,.iconMail:before,.iconMap:before,.iconMegaphone:before,.iconMenu:before,.iconMessageCompose:before,.iconMessageView:before,.iconMinus:before,.iconMobile:before,.iconMoon:before,.iconMortgage:before,.iconMultifamily:before,.iconNoteBeamed:before,.iconPaperPlane:before,.iconPencil:before,.iconPhone:before,.iconPicture:before,.iconPig:before,.iconPinterest:before,.iconPlus:before,.iconPopup:before,.iconPrint:before,.iconQuote:before,.iconRent:before,.iconReply:before,.iconReplyAll:before,.iconResizeFull:before,.iconResizeSmall:before,.iconRestaurants:before,.iconRight:before,.iconRightOpen:before,.iconRocket:before,.iconSearch:before,.iconShopping:before,.iconStar:before,.iconStarActive:before,.iconStarDefault:before,.iconStarEmpty:before,.iconStarNotification:before,.iconStarShield:before,.iconTag:before,.iconThumbsDown:before,.iconThumbsUp:before,.iconTicket:before,.iconTransit:before,.iconTrash:before,.iconTrophy:before,.iconTwitter:before,.iconUp:before,.iconUpOpen:before,.iconUser:before,.iconUserAdd:before,.iconUsers:before,.iconVcard:before,.iconVideo:before,.iconWalking:before,.iconZombieHand:before,.ratingStar .ratingGroup .ratingOn label:before,.ratingStar .ratingGroup label:before,.toggleArrow:before,.toggleArrowActive:before{font-family:Truliacons;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1.1em;margin-right:.2em;vertical-align:baseline;text-align:center;font-variant:normal;text-transform:none}
+.iconActivelife:before{content:'\e800'}
+.iconAddress:before{content:'\e801'}
+.iconAgent:before{content:'\e802'}
+.iconChartArea:before{content:'\e803'}
+.iconChartBar:before{content:'\e804'}
+.iconChartLine:before{content:'\e805'}
+.iconExport:before{content:'\e806'}
+.iconEye:before{content:'\e807'}
+.iconFacebook:before{content:'\e808'}
+.iconInfo:before{content:'\e809'}
+.iconLeaf:before{content:'\e80a'}
+.iconLeft:before{content:'\e80b'}
+.iconPhone:before{content:'\e80c'}
+.iconPicture:before{content:'\e80d'}
+.iconPig:before{content:'\e80e'}
+.iconStarDefault:before,.iconStarEmpty:before,.ratingStar .ratingGroup label:before{content:'\e80f'}
+.iconCrime:before,.iconStarShield:before{content:'\e810'}
+.iconTag:before{content:'\e811'}
+.iconAffordability:before{content:'\e812'}
+.iconUserAdd:before{content:'\e813'}
+.iconAir:before{content:'\e814'}
+.iconAndroid:before{content:'\e815'}
+.iconApple:before{content:'\e816'}
+.iconAttach:before{content:'\e817'}
+.iconAttention:before{content:'\e818'}
+.iconBasket:before{content:'\e819'}
+.iconBath:before{content:'\e81a'}
+.iconBed:before{content:'\e81b'}
+.iconBell:before{content:'\e81c'}
+.iconBike:before{content:'\e81d'}
+.iconBlock:before{content:'\e81e'}
+.iconBookmark:before{content:'\e81f'}
+.iconCalendar:before{content:'\e820'}
+.iconCamera:before{content:'\e821'}
+.iconCancel:before{content:'\e859';transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg)}
+.iconCar:before{content:'\e823'}
+.iconCat:before{content:'\e824'}
+.iconChartPie:before{content:'\e825'}
+.iconChat:before{content:'\e826'}
+.iconCheck:before{content:'\e827'}
+.iconCircledHelp:before{content:'\e828'}
+.iconCity:before{content:'\e829'}
+.iconClock:before{content:'\e82a'}
+.iconCloud:before{content:'\e82b'}
+.iconCoffee:before{content:'\e82c'}
+.iconCog:before{content:'\e82d'}
+.iconComment:before{content:'\e82e'}
+.iconCreditCard:before{content:'\e82f'}
+.iconCup:before{content:'\e830'}
+.iconDirection:before{content:'\e831'}
+.iconDocs:before{content:'\e832'}
+.iconDog:before{content:'\e833'}
+.iconDown:before{content:'\e834'}
+.iconDownOpen:before{content:'\e835'}
+.iconFHEO:before{content:'\e836'}
+.iconFlag:before{content:'\e837'}
+.iconFlight:before{content:'\e838'}
+.iconFloorplan:before{content:'\e839'}
+.iconFolder:before{content:'\e83a'}
+.iconFood:before{content:'\e83b'}
+.iconForward:before{content:'\e83c'}
+.iconFuel:before{content:'\e83d'}
+.iconGlobe:before{content:'\e83e'}
+.iconGooglePlus:before{content:'\e83f'}
+.iconGraduationCap:before{content:'\e840'}
+.iconHeart:before,.iconHeartInactive:before{content:'\e841'}
+.iconHeartEmpty:before{content:'\e842'}
+.iconHelp:before{content:'\e843'}
+.iconHome:before{content:'\e844'}
+.iconHourGlass:before{content:'\e845'}
+.iconInbox:before{content:'\e846'}
+.iconInstagram:before{content:'\e87b'}
+.iconLeftOpen:before{content:'\e847'}
+.iconLinkedin:before{content:'\e848'}
+.iconList:before{content:'\e849'}
+.iconLocation:before{content:'\e84a'}
+.iconMail:before{content:'\e84b'}
+.iconMap:before{content:'\e84c'}
+.iconMegaphone:before{content:'\e84d'}
+.iconMenu:before{content:'\e84e'}
+.iconMessageCompose:before{content:'\e84f'}
+.iconMessageView:before{content:'\e850'}
+.iconMinus:before{content:'\e851'}
+.iconMobile:before{content:'\e852'}
+.iconMoon:before{content:'\e853'}
+.iconMultifamily:before{content:'\e87a'}
+.iconNoteBeamed:before{content:'\e854'}
+.iconMortgage:before{content:'\e855'}
+.iconPaperPlane:before{content:'\e856'}
+.iconPencil:before{content:'\e857'}
+.iconPinterest:before{content:'\e858'}
+.iconPlus:before{content:'\e859'}
+.iconPopup:before{content:'\e85a'}
+.iconPrint:before{content:'\e85b'}
+.iconQuote:before{content:'\e85c'}
+.iconRent:before{content:'\e85d'}
+.iconReply:before{content:'\e85e'}
+.iconReplyAll:before{content:'\e85f'}
+.iconResizeFull:before{content:'\e860'}
+.iconResizeSmall:before{content:'\e861'}
+.iconRestaurants:before{content:'\e862'}
+.iconRight:before{content:'\e863'}
+.iconRightOpen:before{content:'\e864'}
+.iconRocket:before{content:'\e865'}
+.iconSearch:before{content:'\e866'}
+.iconShopping:before{content:'\e867'}
+.iconStar:before,.iconStarActive:before,.iconStarNotification:before,.ratingStar .ratingGroup .ratingOn label:before{content:'\e868'}
+.iconThumbsDown:before{content:'\e869'}
+.iconThumbsUp:before{content:'\e86a'}
+.iconTicket:before{content:'\e86b'}
+.iconTransit:before{content:'\e86c'}
+.iconTrash:before{content:'\e86d'}
+.iconTrophy:before{content:'\e86e'}
+.iconTwitter:before{content:'\e86f'}
+.iconUp:before{content:'\e870'}
+.iconUpOpen:before{content:'\e871'}
+.iconUser:before{content:'\e872'}
+.iconUsers:before{content:'\e873'}
+.iconVcard:before{content:'\e874'}
+.iconVideo:before{content:'\e875'}
+.iconWalking:before{content:'\e876'}
+.iconZombieHand:before{content:'\e877'}
+.iconHomeWorth:before{content:'\e878'}
+.iconBlog:before{content:'\e879'}
+.icon{margin-right:5px;vertical-align:middle}
+.iconLargeSpinner:before{content:'';width:54px;height:55px;background-image:url(data:image/gif;base64,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);vertical-align:middle;margin:0 0 2px}
+@keyframes loading{0%{border-color:#0daa5f #2ed975 #20c063 #10a75f}
+35%{border-color:#10a75f #0daa5f #2ed975 #20c063;border-radius:50%}
+50%{border-color:#20c063 #10a75f #0daa5f #2ed975;border-radius:50%}
+55%{border-color:#2ed975 #20c063 #10a75f #10a75f;border-radius:50%}
+100%{border-color:#0daa5f #2ed975 #20c063 #10a75f;transform:rotate(360deg)}
+}
+.iconSpinner{width:0;height:0;margin:-1.6px 0 -8px;border:0 solid #0daa5f;border-width:8px;animation:loading .85s linear infinite;opacity:.7}
+.iconCompact,.iconExt{margin-right:0}
+.backgroundPulse,.resultsColumn{animation-timing-function:ease-in}
+.iconExt{margin-left:5px}
+.iconHeartActive:before{content:'\e841';color:#ed1b77}
+.iconHeartInactive:before{content:'\e841';color:rgba(71,78,82,.4);}
+.stackIcons{position:relative;width:1em;height:1em}
+i.iconDisk,i.iconDiskAverage,i.iconDiskChar,i.iconDiskGood,i.iconDiskOrange,i.iconDiskPink,i.iconDiskPoor,i.iconDiskTeal,span.iconDisk,span.iconDiskAverage,span.iconDiskChar,span.iconDiskGood,span.iconDiskOrange,span.iconDiskPink,span.iconDiskPoor,span.iconDiskTeal{font-size:24px;width:48px;height:48px;padding:12px 10px;border-radius:50%;display:block;line-height:1}
+.stackIcons .iconOnly{position:absolute;left:0;font-weight:400!important}
+.iconFlipHorizontal:before{transform:scale(-1,1)}
+.iconFlipVertical:before{transform:scale(1,-1)}
+.iconRotate180:before{transform:rotate(180deg)}
+.iconOnly:before{margin:0!important}
+i.iconDisk,span.iconDisk{color:#474e52;background:#e8e9ea}
+i.iconDisk:before,span.iconDisk:before{margin-right:0}
+i.iconDiskInline,span.iconDiskInline{float:left;margin-right:8px}
+i.iconDiskAverage:before,i.iconDiskChar:before,i.iconDiskGood:before,i.iconDiskOrange:before,i.iconDiskPink:before,i.iconDiskPoor:before,i.iconDiskTeal:before,span.iconDiskAverage:before,span.iconDiskChar:before,span.iconDiskGood:before,span.iconDiskOrange:before,span.iconDiskPink:before,span.iconDiskPoor:before,span.iconDiskTeal:before{margin-right:0}
+i.iconDiskTeal,span.iconDiskTeal{color:#fff;background:#06e7bb}
+i.iconDiskChar,span.iconDiskChar{color:#474e52;background:#c9f524}
+i.iconDiskPink,span.iconDiskPink{color:#fff;background:#ed1b77}
+i.iconDiskOrange,span.iconDiskOrange{color:#fff;background:#f74a27}
+i.iconDiskGood,span.iconDiskGood{color:#fff;background:#228959}
+i.iconDiskAverage,span.iconDiskAverage{color:#fff;background:#fbb100}
+i.iconDiskPoor,span.iconDiskPoor{color:#fff;background:#e13009}

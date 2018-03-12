@@ -90,9 +90,12 @@ class ApiController extends Controller {
 	}
 
 	public function demographics($location)
-	{	
+	{
 		$url = "http://www.zillow.com/webservice/GetDemographics.htm?zws-id=X1-ZWz18s9whswop7_8p8sy&".$location;
-		$obj = file_get_contents($url);
+		$url_GetDeepComps = "http://www.zillow.com/webservice/GetDeepComps.htm?zws-id=X1-ZWz18s9whswop7_8p8sy&zpid=48749425&".$location;
+		$url_GetComps = "http://www.zillow.com/webservice/GetComps.htm?zws-id=X1-ZWz18s9whswop7_8p8sy&zpid=48749425&".$location;
+		$url_zestimate = "http://www.zillow.com/webservice/GetZestimate.htm?zws-id=X1-ZWz18s9whswop7_8p8sy&zpid=48749425";
+		$obj = file_get_contents($url_GetComps);
 		$xml = simplexml_load_string($obj);
 		$json = json_encode($xml);
 		return $json;
