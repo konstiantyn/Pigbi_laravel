@@ -2,6 +2,10 @@
   background: #20C063;
 }
 
+.navbar {
+  border-radius: 0px !important;
+}
+
 .navbar-brand {
   color: white;
   font-size: 22px !important;
@@ -16,6 +20,36 @@
 .nav-item a:hover {
   background-color: #10A75F !important;
 }
+
+.navbar .search-line .form-group {
+  padding-right: 0px;
+}
+
+.navbar .search-line input {
+  }
+
+#main-header ul li.saved {
+  padding-right: 20px;
+  padding-top: 10px;
+}
+
+#main-header ul li.saved a {
+  font-size: 16px; padding: 5px; color: #fff; font-weight: 700;  
+}
+
+#main-header ul li a:hover {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.sub-menu-options ul li.dropdown {
+  padding: 10px 10px 10px 10px;
+}
+
+.sub-menu-options ul li.dropdown a {
+  font-size: 18px; padding: 5px; border: 1px solid #ddd; color: #7c807b; border-radius: 5px;
+}
 /*-----------------------------------*/
 .navbar-green {
   background-color: #20C063;
@@ -26,6 +60,14 @@
 }
 
 .navbar {	margin-bottom: 0 !important;}
+
+.filter-options .dropdown a {
+  font-size: 18px; padding: 5px; border: 1px solid #ddd; color: #7c807b; border-radius: 5px;
+}
+
+.filter-options .dropdown a:hover {
+  text-decoration: none;
+}
 
 ul {list-style: none; padding: 0px;}
 ul.show-list li {
@@ -106,6 +148,11 @@ ul.show-list li {
   color: white;
   border-radius: 5px 0 0 0;
 }
+/*
+.gallery-image-detail {
+  width: 75% !important;
+  height: auto;
+}*/
 
 .map-div {
   height: 100%;

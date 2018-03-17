@@ -13,7 +13,7 @@
     <script type="text/javascript" src="javascripts/tailored.js"></script>
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="">
+	<!-- <link rel="stylesheet" type="text/css" href="{{asset('bootstrap/css/')}}"> -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 	<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -42,20 +42,20 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="main-header">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Saved</a></li>
+				<li class="saved"><a href="#">Saved</a></li>
 				<li>
-					<button type="submit" class="btn navbar-btn btn-white">Sign in</button>
-		            <button type="submit" class="btn navbar-btn btn-success">Register</button>
+					<button type="submit" class="btn navbar-btn btn-white" style="padding: 3px 10px; font-size: 15px;">Sign in</button>
+		            <button type="submit" class="btn navbar-btn btn-success"  style="padding: 3px 10px; font-size: 15px;">Register</button>
 				</li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</nav>
-	<div class="navbar navbar-collapse" style="background: #fff;">
-		<form class="navbar-form navbar-left" role="search">
-			<div class="form-group col-xs-9">
+	<div class="navbar" style="background: #fff;">
+		<form class="navbar-form navbar-left search-line" role="search">
+			<div class="form-group col-xs-10">
 				<input type="text" class="form-control" placeholder="Search">
 			</div>
-			<button type="submit" class="btn btn-default col-xs-3"><span class="glyphicon glyphicon-search"></span></button>
+			<button type="submit" class="btn btn-default col-xs-2"><span class="glyphicon glyphicon-search"></span></button>
 		</form>
 		<div class="sub-menu-options">
 			<ul class="nav navbar-nav">
@@ -121,7 +121,7 @@
 						<li><a href="#">One more separated link</a></li>
 					</ul>
 				</li>
-				<li>
+				<li style="padding-bottom: 0; padding-top: 0;">
 					<button type="submit" class="btn navbar-btn btn-success">Save Search</button>
 				</li>
 			</ul>	

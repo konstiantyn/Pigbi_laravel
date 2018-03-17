@@ -15,6 +15,14 @@ _MapObj.prototype.init = function (locations) {
     var self = this;
     
     var div = this.div;
+
+    var span;
+    if (!span) {
+      span = this.span = document.createElement('span');
+      span.className = 'map-label';
+      span.textContent = '$155.3K';
+    }
+    
     var img;
     if (!img) {
       img = this.img = document.createElement('img');
@@ -27,13 +35,6 @@ _MapObj.prototype.init = function (locations) {
       img.src = "//thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/ISahrp29yiicls0000000000.jpg";
     }
 
-    var span;
-    if (!span) {
-      span = this.span = document.createElement('span');
-      span.className = 'map-label';
-      span.textContent = '$155.3K';
-    }
-    
     if (!div) {
     
       div = this.div = document.createElement('div');
