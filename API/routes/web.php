@@ -14,5 +14,7 @@
 Route::get('/', 'SiteController@index');
 Route::get('/index', 'SiteController@index');
 Route::get('/application', 'SiteController@application');
+Route::get('/test', 'SiteController@test');
+
 // Route::get('/saved', 'SiteController@saved');
 // Route::get('/', 'SiteController@approved');

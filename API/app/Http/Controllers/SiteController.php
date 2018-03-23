@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+namespace App\Http\Classes;
 
 use Illuminate\Http\Request;
 
@@ -26,6 +27,10 @@ class SiteController extends Controller
 
     public function application() {
         return view('application');
+    }
+
+    public function test() {
+        print XmlToJson::Parse("http://localhost:8000/VestaPreferred.xml");
     }
 
     /**
