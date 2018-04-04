@@ -14,18 +14,6 @@
 					</ul>
 				</div>
 			</div>
-			<!-- <div class="col-sm-6 col-sm-offset-3">
-				<div class="dropdown" style="padding-top: 10px; padding-bottom: 10px;">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 18px; padding: 5px; border: 1px solid #ddd; color: #7c807b; border-radius: 5px;">Sort: Featured <b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Sort: Featured</a></li>
-						<li><a href="#">Sort: Newest</a></li>
-						<li><a href="#">Sort: Price (Lo-Hi)</a></li>
-						<li><a href="#">Sort: Price (Hi-Lo)</a></li>
-						<li><a href="#">Sort: Favorites</a></li>
-					</ul>
-				</div>
-			</div> -->
 		</div>
 	</div>
 	<div id="Application">
@@ -65,20 +53,6 @@
 		</div>
 	</div>
 </div>
-<!-- <div class="container">
-	<div class="row"><div id='ISqt3snhq4xsz51000000000' >
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-heading">Home</div>
-
-				<div class="panel-body">
-					You are logged in!
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
-<!-- <script type="text/javascript" src="{{asset('javascripts/gallery-modal-resizing.js')}}"></script> -->
 <div class="mbr-gallery modal fade" id="detailCardModal" role="dialog">
 	<div class="modal-dialog modal-lg" style=" width: 70%;">
 	  <div class="modal-content">

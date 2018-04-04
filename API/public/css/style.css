@@ -179,6 +179,7 @@ ul.show-list li {
 .cardDetails {
   padding-left: 1em;
   padding-right: 1em;
+  color: black;
 }
 
 .rental-price {

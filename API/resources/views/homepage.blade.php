@@ -29,810 +29,69 @@
 		</div>
 		<div id="AvailableProperties">
 			<ul class="show-list">
+				@foreach ($estates as $estate)
 				<li class="col-xs-6 col-md-4">
-					<div id="detailCard" class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<i class="iconHeartEmpty"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/ISqt3snhq4xsz51000000000.jpg" alt>
-							<ul>
-								<li>
-									<span class="petFriendly">PET FRIENDLY</span>
-								</li>
-							</ul>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
+					<!-- <a href="/detail/{{$estate->id}}" style="display: block;"> -->
+						<div id="detailCard" class="cardItem" data-toggle="modal" >
+							<button class="favorite-btn">
+								<i class="iconHeartEmpty"></i>
+							</button>
+							<div class="gallary-show">
+								@if(gettype(json_decode($estate->Photos)->Photo) == "array")
+								<img src="{{(json_decode($estate->Photos)->Photo[0]->MediaURL)}}" alt>
+								@else
+								<img src="{{(json_decode($estate->Photos)->Photo->MediaURL)}}" alt>
+								@endif
+
+								<ul>
+									<li>
+										<span class="petFriendly">PET FRIENDLY</span>
+									</li>
+								</ul>
+							</div>
+							<div class="backgroundBasic" style="z-index: 3;">
+								<div class="cardDetails">
+									<div class="rental-price">
+										<span>$ {{$estate->ListPrice}}</span>
 									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
+									<div class="housedetail">
+										<ul class="">
+											<li>
+												<i class="iconBed"></i>
+												{{$estate->Bedrooms}} bd
+											</li>
+											<li>
+												<i class="iconBath"></i>
+												{{$estate->Bathrooms}} ba
+											</li>
+											<li>
+												{{$estate->LivingArea}} sqft
+											</li>
+										</ul>
+									</div>
+									<div class="addressDetail">
+										<div class="addressline1">
+											{{json_decode($estate->Address, true)["commons:FullStreetAddress"]}}
+										</div>
+										<div class="addressline2">
+											<div class="" data-reactid="84">
+												{{json_decode($estate->Address, true)["commons:City"]}}, {{json_decode($estate->Address, true)["commons:StateOrProvince"]}}, {{json_decode($estate->Address, true)["commons:Country"]}}
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="conditionalApproval" type="button">Conditional Approval</button>
+									<div class="cardfooter">
+										<button class="conditionalApproval" type="button">Conditional Approval</button>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					<!-- </a> -->
 				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<!-- <i class="iconHeartInactive"></i> -->
-							<i class="iconHeartActive typeReversed"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/ISahrp29yiicls0000000000.jpg" alt>
-							<ul>
-								<li><span class="new">NEW</span></li>
-								<li><span class="petFriendly">PET FRIENDLY</span></li>
-							</ul>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="newPending" type="button">New - Pending</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<!-- <i class="iconHeartInactive"></i> -->
-							<i class="iconHeartActive typeReversed"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/ISuch2xqhvacrf1000000000.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="applicationApproved" type="button">Application Approved</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<i class="iconHeartActive"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/ISahjn7dgmjnt70000000000.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="conditionalAccepted" type="button">Conditional Accepted</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<!-- <i class="iconHeartInactive"></i> -->
-							<i class="iconHeartEmpty typeReversed"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/ps.109/d/1/5/9/picture-uh=c512e65d49fbb1bfb8ebf7f97c62498-ps=d1593038acba55cb271cc55b32287c6.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="newPending" type="button">New - Pending</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<!-- <i class="iconHeartInactive"></i> -->
-							<i class="iconHeartEmpty typeReversed"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/ps.109/d/1/5/9/picture-uh=c512e65d49fbb1bfb8ebf7f97c62498-ps=d1593038acba55cb271cc55b32287c6.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="newPending" type="button">New - Pending</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<i class="iconHeartActive"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/ps.109/d/1/5/9/picture-uh=c512e65d49fbb1bfb8ebf7f97c62498-ps=d1593038acba55cb271cc55b32287c6.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="newPending" type="button">New - Pending</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<i class="iconHeartActive"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/ps.109/d/1/5/9/picture-uh=c512e65d49fbb1bfb8ebf7f97c62498-ps=d1593038acba55cb271cc55b32287c6.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="approvedLeased" type="button">Approved Leased</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<!-- <i class="iconHeartInactive"></i> -->
-							<i class="iconHeartEmpty typeReversed"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/ps.109/d/1/5/9/picture-uh=c512e65d49fbb1bfb8ebf7f97c62498-ps=d1593038acba55cb271cc55b32287c6.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="newPending" type="button">New - Pending</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<!-- <i class="iconHeartInactive"></i> -->
-							<i class="iconHeartEmpty typeReversed"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/ps.109/d/1/5/9/picture-uh=c512e65d49fbb1bfb8ebf7f97c62498-ps=d1593038acba55cb271cc55b32287c6.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="newPending" type="button">New - Pending</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<!-- <i class="iconHeartInactive"></i> -->
-							<i class="iconHeartEmpty typeReversed"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/ps.109/d/1/5/9/picture-uh=c512e65d49fbb1bfb8ebf7f97c62498-ps=d1593038acba55cb271cc55b32287c6.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="conditionalAccepted" type="button">New - Pending</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<!-- <i class="iconHeartInactive"></i> -->
-							<i class="iconHeartActive typeReversed"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/ps.109/d/1/5/9/picture-uh=c512e65d49fbb1bfb8ebf7f97c62498-ps=d1593038acba55cb271cc55b32287c6.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="newPending" type="button">New - Pending</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>			
+				@endforeach
 			</ul>
+			{{ $estates->links() }}
 		</div>
-		<div id="SavedProperties">
-			<ul class="show-list">
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<i class="iconHeartActive"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/ISahjn7dgmjnt70000000000.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="conditionalAccepted" type="button">Conditional Accepted</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<!-- <i class="iconHeartInactive"></i> -->
-							<i class="iconHeartEmpty typeReversed"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/ps.109/d/1/5/9/picture-uh=c512e65d49fbb1bfb8ebf7f97c62498-ps=d1593038acba55cb271cc55b32287c6.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="newPending" type="button">New - Pending</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<!-- <i class="iconHeartInactive"></i> -->
-							<i class="iconHeartEmpty typeReversed"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/ps.109/d/1/5/9/picture-uh=c512e65d49fbb1bfb8ebf7f97c62498-ps=d1593038acba55cb271cc55b32287c6.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="newPending" type="button">New - Pending</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<!-- <i class="iconHeartInactive"></i> -->
-							<i class="iconHeartEmpty typeReversed"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/ps.109/d/1/5/9/picture-uh=c512e65d49fbb1bfb8ebf7f97c62498-ps=d1593038acba55cb271cc55b32287c6.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="newPending" type="button">New - Pending</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="col-xs-6 col-md-4">
-					<div class="cardItem" data-toggle="modal" data-target="#detailCardModal">
-						<button class="favorite-btn">
-							<!-- <i class="iconHeartInactive"></i> -->
-							<i class="iconHeartEmpty typeReversed"></i>
-						</button>
-						<div class="gallary-show">
-							<img src="//thumbs.trulia-cdn.com/pictures/thumbs_3/ps.109/d/1/5/9/picture-uh=c512e65d49fbb1bfb8ebf7f97c62498-ps=d1593038acba55cb271cc55b32287c6.jpg" alt>
-						</div>
-						<div class="backgroundBasic" style="z-index: 3;">
-							<div class="cardDetails">
-								<div class="rental-price">
-									<span>$935,000+</span>
-								</div>
-								<div class="housedetail">
-									<ul class="">
-										<li>
-											<i class="iconBed"></i>
-											1 – 3bd
-										</li>
-										<li>
-											<i class="iconBath"></i>
-											1 – 2ba
-										</li>
-										<li>
-											590 – 1,457 sqft
-										</li>
-									</ul>
-								</div>
-								<div class="addressDetail">
-									<div class="addressline1">
-										50 Riverside Blvd #6J
-									</div>
-									<div class="addressline2">
-										<div class="" data-reactid="84">
-											Upper West Side, New York, NY
-										</div>
-									</div>
-								</div>
-								<div class="cardfooter">
-									<button class="conditionalAccepted" type="button">New - Pending</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<script type="text/javascript">
-			$('#savedproperties-item').on("click", function() {
-				$('#property-menu').text($(this).text());
-				$('#AvailableProperties').hide();
-				$('#SavedProperties').show();
-			});
-			$('#availableproperties-item').on("click", function() {
-				$('#property-menu').text($(this).text());
-				$('#SavedProperties').hide();
-				$('#AvailableProperties').show();
-			});
-		</script>
+		
 	</div>
 	<div class="col-md-6">
 		<div class="map-column" style="position: fixed; width: 50%; height: 100%;">
@@ -939,7 +198,7 @@
 					<!-- Wrapper for slides -->
 					<div class="carousel-inner">
 						<div class="item active">
-							<img src="{{asset('images/1.jpg')}}" alt="Chania">
+							<img src="http://photos.listhub.net/CCIAORMA/21402153/1?lm=20140328T171615" alt="Chania">
 							<div class="carousel-caption">
 								<h3>Los Angeles</h3>
 								<p>LA is always so much fun!</p>
@@ -947,7 +206,14 @@
 						</div>
 
 						<div class="item">
-							<img src="{{asset('images/2.jpg')}}" alt="Chicago">
+							<img src="http://photos.listhub.net/CCIAORMA/21402153/9?lm=20140328T171615" alt="Chicago">
+							<div class="carousel-caption">
+								<h3>Chicago</h3>
+								<p>Thank you, Chicago!</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="http://photos.listhub.net/CCIAORMA/21402153/17?lm=20140328T171615" alt="Chicago">
 							<div class="carousel-caption">
 								<h3>Chicago</h3>
 								<p>Thank you, Chicago!</p>
@@ -955,7 +221,7 @@
 						</div>
 
 						<div class="item">
-							<img src="{{asset('images/3.jpg')}}" alt="New York">
+							<img src="http://photos.listhub.net/CCIAORMA/21402153/29?lm=20140328T171615" alt="New York">
 							<div class="carousel-caption">
 								<h3>New York</h3>
 								<p>We love the Big Apple!</p>

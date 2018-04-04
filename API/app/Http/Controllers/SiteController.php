@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-namespace App\Http\Classes;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+/*use Prewk\XmlStringStreamer;
+use Prewk\XmlStringStreamer\Stream;
+use Prewk\XmlStringStreamer\Parser;*/
 
 class SiteController extends Controller
 {
@@ -14,7 +17,8 @@ class SiteController extends Controller
      */
     public function index()
     {
-        return view('homepage');
+        $estates = DB::table('estates')->paginate(30);
+        return view('homepage',['estates' => $estates]);
     }
 
     public function saved() {
@@ -27,10 +31,6 @@ class SiteController extends Controller
 
     public function application() {
         return view('application');
-    }
-
-    public function test() {
-        print XmlToJson::Parse("http://localhost:8000/VestaPreferred.xml");
     }
 
     /**
