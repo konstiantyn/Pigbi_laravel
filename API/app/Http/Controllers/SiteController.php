@@ -43,6 +43,42 @@ class SiteController extends Controller
         //
     }
 
+    public function autocomplete(Request $request)
+    {
+        $term=$request->term;
+
+        $data = \App\Estate::where('Address','LIKE','%'.$term.'%')
+        ->take(10)
+        ->select('Address')
+        ->get();
+        $result=array();
+        // print_r($data);
+        foreach ($data as $key => $value){
+            $result[] = 
+            ['value' =>
+                json_decode(json_decode($value)->Address)->{"commons:FullStreetAddress"}
+                .json_decode(json_decode($value)->Address)->{"commons:City"}
+                .json_decode(json_decode($value)->Address)->{"commons:StateOrProvince"}
+                .json_decode(json_decode($value)->Address)->{"commons:Country"}
+            ];
+        }
+        return response()->json($result);
+    }
+
+    public function search(Request $request)
+    {
+        $term = $request->get("Address");
+        $data = \App\Estate::where('Address','LIKE','%'.$term.'%')->paginate(30);
+        return view('homepage',['estates' => $data]);
+    }
+    
+    public function detail(Request $request)
+    {
+        $id = $request->get("ID");
+        $data = \App\Estate::where('id', $id)->get();
+        return view('detail', ['estate' => $data]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

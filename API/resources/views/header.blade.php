@@ -24,7 +24,11 @@
 	<![endif]-->
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDssDEyM2r6dYD-PQprIdt5Sy6cPJMzPvs&libraries=places&callback=initMap" async defer></script>
+	<script src="{{asset('js/marker.js')}}"></script>
 </head>
 <body style="background: #ddd;">
 <header style="position: fixed; width: 100%; height: 100px; z-index: 100;">
@@ -51,11 +55,30 @@
 		</div><!-- /.navbar-collapse -->
 	</nav>
 	<div class="navbar" style="background: #fff;">
-		<form class="navbar-form navbar-left search-line" role="search">
+		<form class="navbar-form navbar-left search-line" action="/search" role="search" method="POST">
 			<div class="form-group col-xs-10">
-				<input type="text" class="form-control" placeholder="Search">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<input type="text" id="statnewname" name="Address" class="form-control" placeholder="Search">
 			</div>
-			<button type="submit" class="btn btn-default col-xs-2"><span class="glyphicon glyphicon-search"></span></button>
+			<button type="submit" class="btn btn-default col-xs-2">
+				<span class="glyphicon glyphicon-search"></span>
+			</button>
+			<script type="text/javascript">
+				$('#statnewname').autocomplete({
+					source : "{!!URL::route('autocomplete')!!}",
+					minlenght: 1,
+					autoFocus: false,
+					select: function(e,ui){
+						console.log(ui);
+					}
+				});
+				$('#statnewname').keydown(function (e) {
+					console.log(e);
+					/*if(e.keyCode == 13) {
+						location.href = "/search?" + $(this).val();
+					}*/
+				});
+			</script>
 		</form>
 		<div class="sub-menu-options">
 			<ul class="nav navbar-nav">

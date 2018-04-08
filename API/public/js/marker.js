@@ -64,11 +64,25 @@ _MapObj.prototype.init = function (locations) {
         this.childNodes[1].style.display = 'none';
         google.maps.event.trigger(self, "click");
       });
+/*
+      google.maps.event.addDomListener(window, 'load', function () {
+        autocomplete = new google.maps.places.Autocomplete(document.getElementById('addressSearch'));
+        google.maps.event.addListener(autocomplete, 'place_changed', getPlaceInfo);
+      });*/
       
+      /*google.maps.event.addDomListener(document.getElementById('addressSearch'), 'change', function () {
+        console.log(this.value);
+      });*/
+
       var panes = this.getPanes();
       panes.overlayImage.appendChild(div);
     }
     
+    /*function getPlaceInfo() {
+      var place = autocomplete.getPlace();
+      console.log(place);
+    }*/
+
     var point = this.getProjection().fromLatLngToDivPixel(this.latlng);
     
     if (point) {
