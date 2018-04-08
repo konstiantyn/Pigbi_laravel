@@ -27,7 +27,7 @@
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDSOr5Er4FWpcu5-0z1IR-ZAb80bbAP_Y&libraries=places&callback=initMap" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgPq40HNQ1DrfUhQZyZ3ZrC_VR0_d-XGw&libraries=places&callback=initMap" async defer></script>
 	<script src="{{asset('js/marker.js')}}"></script>
 </head>
 <body style="background: #ddd;">
