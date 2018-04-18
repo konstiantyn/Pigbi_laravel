@@ -143,7 +143,8 @@ _MapObj.prototype.init = function (locations) {
   
  
 }
-function initMap(locations) {
+
+window.initMap = function(locations){
   var locations = [
   {lat: -33.890542, lng: 151.274856},
   {lat: -33.923036, lng: 151.259052},
@@ -153,3 +154,9 @@ function initMap(locations) {
   var _map = new _MapObj();
   var initMap = _map.init(locations);
 }
+
+/*
+function initMap(locations) {
+  
+}
+*/

@@ -36,13 +36,14 @@
 							<i class="iconHeartEmpty"></i>
 						</button>
 						<div class="gallary-show">
-							<a onclick="window.open('/detail?ID={{$estate->id}}', '_blank')" style="display:inline-block;">
-								@if(gettype(json_decode($estate->Photos)->Photo) == "array")
-								<img src="{{(json_decode($estate->Photos)->Photo[0]->MediaURL)}}" />
-								@else
-								<img src="{{(json_decode($estate->Photos)->Photo->MediaURL)}}" />
-								@endif
-							</a>
+							<!-- window.open('/detail?ID={{$estate->id}}', '_blank') -->
+							<!-- <a href="#detailCardModal" data-toggle="modal" onclick="javascript:detailView({{$estate->id}})" style="display:inline-block;"> -->
+							@if(gettype(json_decode($estate->Photos)->Photo) == "array")
+							<img id="img{{$estate->id}}" class="img-grid" src="{{(json_decode($estate->Photos)->Photo[0]->MediaURL)}}"/>
+							@else
+							<img id="img{{$estate->id}}" class="img-grid" src="{{(json_decode($estate->Photos)->Photo->MediaURL)}}" />
+							@endif
+							<!-- </a> -->
 							<ul>
 								<li>
 									<span class="petFriendly">PET FRIENDLY</span>
@@ -97,6 +98,106 @@
 			<div id="map" class="map-div col-xs-12"></div>
 		</div>    	
 	</div>
+
+	<div id="myModal" class="modal">
+
+		<!-- The Close Button -->
+		<span class="close">&times;</span>
+
+		<!-- Modal Content (The Image) -->
+		<img class="modal-content" id="img001">
+
+		<!-- Modal Caption (Image Text) -->
+		<div id="caption"></div>
+	</div>
+	<style type="text/css">
+		.img-grid:hover {opacity: 0.7;}
+
+		/* The Modal (background) */
+		.modal {
+		    display: none; /* Hidden by default */
+		    position: fixed; /* Stay in place */
+		    z-index: 110; /* Sit on top */
+		    padding-top: 100px; /* Location of the box */
+		    left: 0;
+		    top: 0;
+		    width: 100%; /* Full width */
+		    height: 100%; /* Full height */
+		    overflow: auto; /* Enable scroll if needed */
+		    background-color: rgb(0,0,0); /* Fallback color */
+		    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+		}
+
+		/* Modal Content (Image) */
+		.modal-content {
+		    margin: auto;
+		    display: block;
+		    width: 80%;
+		    max-width: 700px;
+		}
+
+		/* Caption of Modal Image (Image Text) - Same Width as the Image */
+		#caption {
+		    margin: auto;
+		    display: block;
+		    width: 80%;
+		    max-width: 700px;
+		    text-align: center;
+		    color: #ccc;
+		    padding: 10px 0;
+		    height: 150px;
+		}
+
+		/* Add Animation - Zoom in the Modal */
+		.modal-content, #caption { 
+		    animation-name: zoom;
+		    animation-duration: 0.6s;
+		}
+
+		@keyframes zoom {
+		    from {transform:scale(0)} 
+		    to {transform:scale(1)}
+		}
+
+		/* The Close Button */
+		.close {
+		    position: absolute;
+		    top: 15px;
+		    right: 35px;
+		    color: #f1f1f1;
+		    font-size: 40px;
+		    font-weight: bold;
+		    transition: 0.3s;
+		}
+
+		.close:hover,
+		.close:focus {
+		    color: #bbb;
+		    text-decoration: none;
+		    cursor: pointer;
+		}
+
+		/* 100% Image Width on Smaller Screens */
+		@media only screen and (max-width: 700px){
+		    .modal-content {
+		        width: 100%;
+		    }
+		}
+	</style>
 </div>
+<script type="text/javascript">
+	$('.img-grid').click(function() {
+		var modalImg = document.getElementById("img001");
+		modalImg.src = "http://photos.listhub.net/CCIAORMA/21402153/1?lm=20140328T171615";
+		$('#myModal').show();	
+	});
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() { 
+	  document.getElementById('myModal').style.display = "none";
+	}
+</script>
 @endsection
  
