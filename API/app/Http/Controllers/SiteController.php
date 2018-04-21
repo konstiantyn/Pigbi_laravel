@@ -75,8 +75,17 @@ class SiteController extends Controller
     public function detail(Request $request)
     {
         $id = $request->get("ID");
-        $data = \App\Estate::where('id', $id)->get();
-        return view('detail', ['estate' => $data]);
+        $value = \App\Estate::where('id', $id)->get()->first();
+        /*$estate['address'] = [
+            ['address1' =>  
+                            json_decode(json_decode($value)->Address)->{"commons:FullStreetAddress"}.
+                            json_decode(json_decode($value)->Address)->{"commons:City"}],
+            ['address2' =>  
+                            json_decode(json_decode($value)->Address)->{"commons:StateOrProvince"}.
+                            json_decode(json_decode($value)->Address)->{"commons:Country"}],
+            ['description' => json_decode($value)->ListingDescription]
+        ];*/
+        return response()->json($value);
     }
 
     /**

@@ -26,42 +26,43 @@
 	    		</div>
 	    		<div class="galllery-detail-description-body" style="padding-top: 20px;">
 	    			<span style="font-size: 20px; padding-left: 10px; color: #098e21;">Ask about this property</span>
+	    			<div class="col-sm-12" style="font-size: 15px;">
+		    			<div class="col-sm-3" style="padding: 25px 10px 20px 20px;">
+		    				<img src="{{asset('images/landlords/t3.jpg')}}" width="70px" height="70px" style="border-radius: 50%;">
+		    			</div>
+		    			<div class="col-sm-9" style="padding: 30px 20px 20px 20px;">
+		    				<p style="font-weight: bold;">Mivelessa Ramos</p>
+		    				<p style="color: red;">(305) 773-3937</p>
+		    			</div>
+		    		</div>
+		    		<div style="font-size: 17px; color: #1c130a;">
+		    			<div class="col-sm-6">
+		    				<p>Price: <span>$2,100</span></p>
+		    				<p>Price: <span>$3,750</span></p>
+		    				<p>1 <span>Bedroom</span></p>
+		    				<p>Multi-Family</p>
+		    				<p>Refrigerator</p>
+		    				<p>Dishwasher</p>
+		    				<p>Microwave</p>
+		    				<p>Washer</p>
+		    			</div>
+		    			<div class="col-sm-6">
+		    				<p>Status: <span>For Rent</span></p>
+		    				<p>Parking: <span>Off street</span></p>
+		    				<p>Floors: <span>Tile</span></p>
+		    				<p>Pool</p>
+		    			</div>
+		    		</div>
+		    		<div>
+		    			<p style="text-align: center; font-size: 15px; color: #ca3838;">Information last upadted on 10/25/2017</p>
+		    			<center>
+		    				<button type="button" style="border-radius: 7px; border: none; outline: none; background: #ddd; padding: 15px 20px 15px 20px; color: white; background: #ff7e0ce6; font-weight: 700; font-size: 18px;">
+			    				<span>Make A Pre-Approved Request</span>
+			    			</button>
+		    			</center>
+		    		</div>
 	    		</div>
-	    		<div class="col-sm-12" style="font-size: 15px;">
-	    			<div class="col-sm-3" style="padding: 25px 10px 20px 20px;">
-	    				<img src="{{asset('images/landlords/t3.jpg')}}" width="70px" height="70px" style="border-radius: 50%;">
-	    			</div>
-	    			<div class="col-sm-9" style="padding: 30px 20px 20px 20px;">
-	    				<p style="font-weight: bold;">Mivelessa Ramos</p>
-	    				<p style="color: red;">(305) 773-3937</p>
-	    			</div>
-	    		</div>
-	    		<div style="font-size: 17px; color: #1c130a;" class="col-sm-12">
-	    			<div class="col-sm-6">
-	    				<p>Price: <span>$2,100</span></p>
-	    				<p>Price: <span>$3,750</span></p>
-	    				<p>1 <span>Bedroom</span></p>
-	    				<p>Multi-Family</p>
-	    				<p>Refrigerator</p>
-	    				<p>Dishwasher</p>
-	    				<p>Microwave</p>
-	    				<p>Washer</p>
-	    			</div>
-	    			<div class="col-sm-6">
-	    				<p>Status: <span>For Rent</span></p>
-	    				<p>Parking: <span>Off street</span></p>
-	    				<p>Floors: <span>Tile</span></p>
-	    				<p>Pool</p>
-	    			</div>
-	    		</div>
-	    		<div>
-	    			<p style="text-align: center; font-size: 15px; color: #ca3838;">Information last upadted on 10/25/2017</p>
-	    			<center>
-	    				<button type="button" style="border-radius: 7px; border: none; outline: none; background: #ddd; padding: 15px 20px 15px 20px; color: white; background: #ff7e0ce6; font-weight: 700; font-size: 18px;">
-		    				<span>Make A Pre-Approved Request</span>
-		    			</button>
-	    			</center>
-	    		</div>
+		    		
 	    	</div>
 	    	<div class="col-sm-8 col-xs-12">
 	    		<div class="myCarousel-header" style="padding: 10px;">

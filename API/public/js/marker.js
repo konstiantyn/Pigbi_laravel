@@ -109,7 +109,7 @@ _MapObj.prototype.init = function (locations) {
   }
   console.log(la + " " + lo);
   var center = new google.maps.LatLng(la, lo);
-  var map = new google.maps.Map(document.getElementById('map'), {
+  var map = new google.maps.Map(document.getElementById('mapview'), {
     zoom: 10,
     center: center
   });
@@ -123,7 +123,7 @@ _MapObj.prototype.init = function (locations) {
       myLatlng, 
       map,
       {
-        marker_id: '123'+i,
+        marker_id: 'pigbimap'+i,
         colour: 'Red'
       }
     );
