@@ -10,6 +10,21 @@
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script type="text/javascript">
+			// console.log('adfadfadfadfad');
+		var searchresult = {!! json_encode($estates) !!};
+		// console.log(searchresult);
+
+		var locations = [];
+		for (var i = 0; i < searchresult.data.length; ++ i) {
+			// console.log(JSON.parse(searchresult.data[i].Location));
+			locations.push({
+				la: JSON.parse(searchresult.data[i].Location).Latitude,
+				lo: JSON.parse(searchresult.data[i].Location).Longitude
+			});
+		}
+		console.log(locations);
+	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 	<script src="{{asset('js/marker.js')}}"></script>

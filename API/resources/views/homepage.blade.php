@@ -253,6 +253,7 @@
 	}
 </style>
 <script type="text/javascript">
+$(document).ready(function () {
 	var total_slides_counts = 0;
 	$('.img-grid').click(function() {
 		var id = $(this).data('id');
@@ -325,6 +326,7 @@
 		// ---------------------------------------
 		$('#myModal').show();
 	}
+});
 </script>
 @endsection
  

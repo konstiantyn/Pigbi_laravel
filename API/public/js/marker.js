@@ -2,7 +2,7 @@
 function _MapObj() {
 }
 
-_MapObj.prototype.init = function (locations) {
+_MapObj.prototype.init = function () {
   function CustomMarker(latlng, map, args) {
     this.latlng = latlng; 
     this.args = args; 
@@ -102,13 +102,16 @@ _MapObj.prototype.init = function (locations) {
     return this.latlng; 
   };
 
-  var center, la=locations[0].lat, lo=locations[0].lng;
-  for (var i = 1; i < locations.length; ++ i) {
-    la = (la + locations[i].lat) / 2;
-    lo = (lo + locations[i].lng) / 2;
+  var center, la=Number(locations[0].la), lo=Number(locations[0].lo);
+  console.log(locations);
+  for (var i = 0; i < locations.length; ++ i) {
+    // console.log(typeof(Number(locations[i].la)), Number(locations[i].la)+100)
+    la = (la + Number(locations[i].la)) / 2;
+    lo = (lo + Number(locations[i].lo)) / 2;
+    // console.log(la + " "  + lo);
   }
-  console.log(la + " " + lo);
-  var center = new google.maps.LatLng(la, lo);
+  
+  var center = new google.maps.LatLng(la, lo);console.log(la + " " + lo);
   var map = new google.maps.Map(document.getElementById('mapview'), {
     zoom: 10,
     center: center
@@ -117,8 +120,8 @@ _MapObj.prototype.init = function (locations) {
   for (var i = 0; i < locations.length; ++ i) {
     var loc = locations[i];
 
-    var myLatlng = new google.maps.LatLng(loc.lat, loc.lng);
-    console.log(myLatlng);
+    var myLatlng = new google.maps.LatLng(loc.la, loc.lo);
+    // console.log(myLatlng);
     var overlay = new CustomMarker(
       myLatlng, 
       map,
@@ -144,15 +147,15 @@ _MapObj.prototype.init = function (locations) {
  
 }
 
-window.initMap = function(locations){
-  var locations = [
+window.initMap = function(){
+  /*var locations = [
   {lat: -33.890542, lng: 151.274856},
   {lat: -33.923036, lng: 151.259052},
   {lat: -33.80010128657071, lng: 151.28747820854187},
   {lat: -34.028249, lng: 151.157507}
-  ];
+  ];*/
   var _map = new _MapObj();
-  var initMap = _map.init(locations);
+  var initMap = _map.init();
 }
 
 /*
