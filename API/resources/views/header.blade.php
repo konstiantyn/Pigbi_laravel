@@ -32,7 +32,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBibcxCybips4ljfrOE8BibQFSBVPaoKyY&libraries=places&callback=initMap" async defer></script>
 </head>
 <body style="background: #ddd;">
-<header style="position: fixed; width: 100%; height: 100px; z-index: 100;">
+<header style="/*position: fixed;*/ width: 100%; height: 100px; z-index: 100;" class="header" id="pigbi_header">	
 	<nav class="navbar navbar-green" role="navigation" style="padding-right: 10px;">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -79,6 +79,15 @@
 						location.href = "/search?" + $(this).val();
 					}*/
 				});
+
+				window.onscroll = function() {setfixedheader()}; var header = document.getElementById("pigbi_header"); var sticky = header.offsetTop;
+				function setfixedheader() {
+				  if (window.pageYOffset >= sticky) {
+				    header.classList.add("sticky");
+				  } else {
+				    header.classList.remove("sticky");
+				  }
+				}
 			</script>
 		</form>
 		<div class="sub-menu-options">

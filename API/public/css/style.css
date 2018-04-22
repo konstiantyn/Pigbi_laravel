@@ -42,7 +42,10 @@
   border: 1px solid #ddd;
   border-radius: 5px;
 }
-
+.sticky{
+  position: fixed;
+  top: 0;
+}
 .sub-menu-options ul li.dropdown {
   padding: 10px 10px 10px 10px;
 }

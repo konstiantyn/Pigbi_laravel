@@ -1,6 +1,6 @@
 @extends('header')
 @section('content')
-<div class="col-xs-12 col-md-12" style="margin-top: 110px; padding: 0px !important;">
+<div class="col-sm-12" style="/*margin-top: 110px;*/ padding: 0px !important;">
 	<div class="col-md-6 col-xs-12" style="padding: 0px !important;">
 		<div class="filter-options col-sm-12" style="background: #fff;">
 			<div class="col-sm-4">
@@ -43,12 +43,12 @@
 							@else
 							<img id="img{{$estate->id}}" data-id="{{$estate->id}}" class="img-grid" src="{{(json_decode($estate->Photos)->Photo->MediaURL)}}" />
 							@endif
-							<!-- </a> -->
-							<ul>
+							<!-- Putting Label on Images -->
+							<!-- <ul>
 								<li>
 									<span class="petFriendly">PET FRIENDLY</span>
 								</li>
-							</ul>
+							</ul> -->
 						</div>
 						<div class="backgroundBasic" style="z-index: 3;">
 							<div class="cardDetails">
@@ -93,7 +93,7 @@
 		</div>
 		
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-6 col-xs-12">
 		<div class="map-column" style="position: fixed; width: 50%; height: 100%;">
 			<div id="mapview" class="map-div col-xs-12"></div>
 		</div>
