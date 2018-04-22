@@ -80,14 +80,7 @@
 					}*/
 				});
 
-				window.onscroll = function() {setfixedheader()}; var header = document.getElementById("pigbi_header"); var sticky = header.offsetTop;
-				function setfixedheader() {
-				  if (window.pageYOffset >= sticky) {
-				    header.classList.add("sticky");
-				  } else {
-				    header.classList.remove("sticky");
-				  }
-				}
+				window.onscroll=function(){setfixedheader()};var header=document.getElementById("pigbi_header");var sticky=header.offsetTop;function setfixedheader(){if(window.pageYOffset>sticky){header.classList.add("sticky");}else{header.classList.remove("sticky");}}
 			</script>
 		</form>
 		<div class="sub-menu-options">

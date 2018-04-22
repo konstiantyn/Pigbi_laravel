@@ -1,6 +1,6 @@
 @extends('header')
 @section('content')
-<div class="col-sm-12" style="/*margin-top: 110px;*/ padding: 0px !important;">
+<div class="col-sm-12 content" style="/*margin-top: 110px;*/ padding: 0px !important;">
 	<div class="col-md-6 col-xs-12" style="padding: 0px !important;">
 		<div class="filter-options col-sm-12" style="background: #fff;">
 			<div class="col-sm-4">
@@ -90,16 +90,13 @@
 				@endforeach
 			</ul>
 			{{ $estates->links() }}
-		</div>
-		
+		</div>	
 	</div>
 	<div class="col-md-6 col-xs-12">
 		<div class="map-column" style="position: fixed; width: 50%; height: 100%;">
 			<div id="mapview" class="map-div col-xs-12"></div>
 		</div>
 	</div>
-
-	
 </div>
 <div id="myModal" class="modal">
 	<div class="modal-header">

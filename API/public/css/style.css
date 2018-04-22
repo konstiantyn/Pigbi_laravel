@@ -46,6 +46,9 @@
   position: fixed;
   top: 0;
 }
+/*.sticky + .content {
+  padding-top: 110px;
+}*/
 .sub-menu-options ul li.dropdown {
   padding: 10px 10px 10px 10px;
 }
