@@ -109,7 +109,7 @@
 		    <span class="glyphicon glyphicon-chevron-left"></span>
 		    <span class="sr-only">Previous</span>
 		  </a>
-		  <span  style="color: #ddd; font-size: 35px;">Favorites <span id="current_slide">1</span> of <span id="total_slides_counts">0</span></span>
+		  <span  style="color: #ddd; font-size: 35px;">Favorites <span id="current_slide">0</span> of <span id="total_slides_counts">0</span></span>
 		  <a class="" href="#myCarousel" data-slide="next" style="color: #ddd;">
 		    <span class="glyphicon glyphicon-chevron-right"></span>
 		    <span class="sr-only">Next</span>
@@ -117,7 +117,7 @@
       </div>
     </div>
     <div class="modal-body" style="height: auto !important; background: white;">
-    	<div class="galllery-detail-description col-sm-4 col-xs-12" style="border: 1px solid #1d1b23; height: 100%;">
+    	<div class="galllery-detail-description col-sm-4 col-xs-12" style="border: 1px solid #1d1b23; height: 100%; padding-bottom: 30px;">
     		<div class="galllery-detail-description-header" style="background: #1d1b23; padding: 8px; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
     			<h1 id='Taxes' align="center" style="color: white;">$2,100<span>/mo</span></h1>
     		</div>
@@ -249,7 +249,7 @@
 	    object-fit: cover;
 	    margin-right: auto;
 	    /*width: 90%;*/
-	    /*height: 50%;*/
+	    height: 500px !important;
 	}
 </style>
 <script type="text/javascript">
@@ -278,7 +278,7 @@
 	}
 	$("#myCarousel").on('slide.bs.carousel', function(evt) {
 	  // console.debug("slide transition started")
-	  $("#current_slide").text(($(this).find('.active').index() + 2)%(total_slides_counts));
+	  $("#current_slide").text(($(this).find('.active').index() + 1));
 	  // console.log('current slide = ', $(this).find('.active').index());
 	  // console.debug('next slide = ', $(evt.relatedTarget).index())
 
