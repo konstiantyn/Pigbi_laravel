@@ -242,6 +242,16 @@
 	<!-- Modal Caption (Image Text) -->
 	<div style="clear: both;"></div>
 </div>
+<style type="text/css">
+	.center {
+	    display: block;
+	    margin-left: auto;
+	    object-fit: cover;
+	    margin-right: auto;
+	    /*width: 90%;*/
+	    /*height: 50%;*/
+	}
+</style>
 <script type="text/javascript">
 	var total_slides_counts = 0;
 	$('.img-grid').click(function() {
@@ -292,13 +302,13 @@
 			if (i == 0) {
 				indicators += '<li data-target="#myCarousel" data-slide-to="' + i + '" class="active"></li>';
 				photos += 	'<div class="item active">' +
-							'<img src="' + JSON.parse(res.Photos).Photo[i].MediaURL +
+							'<img class="center" src="' + JSON.parse(res.Photos).Photo[i].MediaURL +
 							'" alt="New York"></div>';
 			}
 			else {
 				indicators += '<li data-target="#myCarousel" data-slide-to="' + i + '"></li>'
 				photos += 	'<div class="item">' +
-							'<img src="' + JSON.parse(res.Photos).Photo[i].MediaURL +
+							'<img class="center" src="' + JSON.parse(res.Photos).Photo[i].MediaURL +
 							'" alt="New York"></div>';
 			}
 		}
