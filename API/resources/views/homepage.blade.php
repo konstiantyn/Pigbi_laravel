@@ -278,7 +278,7 @@
 	}
 	$("#myCarousel").on('slide.bs.carousel', function(evt) {
 	  // console.debug("slide transition started")
-	  $("#current_slide").text(($(this).find('.active').index() + 1));
+	  $("#current_slide").text((($(this).find('.active').index())%total_slides_counts + 1));
 	  // console.log('current slide = ', $(this).find('.active').index());
 	  // console.debug('next slide = ', $(evt.relatedTarget).index())
 
