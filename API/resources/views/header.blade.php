@@ -134,7 +134,7 @@
 					</ul>
 				</li>
 			</ul>
-			<ul class="nav navbar-nav navbar-right" style="padding-right: 20px;">
+			<ul class="nav navbar-nav navbar-right" style="margin-right: 0px !important;">
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
 					<ul class="dropdown-menu">
