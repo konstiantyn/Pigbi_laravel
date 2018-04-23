@@ -62,7 +62,7 @@
 				<input type="text" id="statnewname" name="Address" class="form-control" placeholder="Search">
 			</div>
 			<button type="submit" class="btn btn-default col-xs-2">
-				<span class="glyphicon glyphicon-search"></span>
+				<i class="iconSearch"></i>
 			</button>
 			<script type="text/javascript">
 				$('#statnewname').autocomplete({
@@ -86,8 +86,29 @@
 		<div class="sub-menu-options">
 			<ul class="nav navbar-nav">
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Any Price<b class="caret"></b></a>
-					<ul class="dropdown-menu">
+					<a href="#" class="dropdown-toggle wid150" data-toggle="dropdown">Any Price<i class="iconDownOpen"></i></a>
+					<ul class="dropdown-menu wid150">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else</a></li>
+						<li><a href="#">Separated link</a></li>
+						<li><a href="#">separated link</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle wid150" data-toggle="dropdown">All Beds<i class="iconDownOpen"></i></a>
+					<ul class="dropdown-menu wid150">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li><a href="#">Separated link</a></li>
+						<li class="divider"></li>
+						<li><a href="#">separated link</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle wid150" data-toggle="dropdown">Pets<i class="iconDownOpen"></i></a>
+					<ul class="dropdown-menu wid150">
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>
 						<li><a href="#">Something else here</a></li>
@@ -98,32 +119,8 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">All Beds<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pets<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">All Rental Types<b class="caret"></b></a>
-					<ul class="dropdown-menu">
+					<a href="#" class="dropdown-toggle wid200" data-toggle="dropdown">All Rental Types<i class="iconDownOpen"></i></a>
+					<ul class="dropdown-menu wid200">
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>
 						<li><a href="#">Something else here</a></li>
@@ -134,23 +131,21 @@
 					</ul>
 				</li>
 			</ul>
-			<ul class="nav navbar-nav navbar-right" style="margin-right: 0px !important;">
+			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
-					<ul class="dropdown-menu">
+					<a href="#" class="dropdown-toggle wid150" data-toggle="dropdown">More<i class="iconDownOpen"></i></a>
+					<ul class="dropdown-menu wid150">
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>
 						<li><a href="#">Something else here</a></li>
 						<li class="divider"></li>
 						<li><a href="#">Separated link</a></li>
 						<li class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
+						<li><a href="#">separated link</a></li>
 					</ul>
 				</li>
-				<li style="padding-bottom: 0; padding-top: 0;">
-					<button type="submit" class="btn navbar-btn btn-success">Save Search</button>
-				</li>
-			</ul>	
+			</ul>
+			<button type="submit" class="btn navbar-btn btn-success" style="float: right; margin-right: 10px">Save Search</button>
 		</div>
 	</div>
 </header>

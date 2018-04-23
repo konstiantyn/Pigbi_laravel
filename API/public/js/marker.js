@@ -113,7 +113,7 @@ _MapObj.prototype.init = function () {
   
   var center = new google.maps.LatLng(la, lo);console.log(la + " " + lo);
   var map = new google.maps.Map(document.getElementById('mapview'), {
-    zoom: 10,
+    zoom: 11,
     center: center
   });
 

@@ -2,11 +2,11 @@
 @section('content')
 <div class="col-sm-12 content" style="/*margin-top: 110px;*/ padding: 0px !important;">
 	<div class="col-md-6 col-xs-12" style="padding: 0px !important;">
-		<div class="filter-options col-sm-12" style="background: #fff;">
+		<div class="filter-options col-sm-12" style="background: #ddd;">
 			<div class="col-sm-4">
-				<div class="dropdown" style="padding-top: 10px; padding-bottom: 10px;">
-					<a id="property-menu" href="#" class="dropdown-toggle" data-toggle="dropdown">Available Properties</a><b class="caret"></b>
-					<ul class="dropdown-menu">
+				<div class="dropdown" style="padding-top: 10px; margin-bottom: 10px;">
+					<a id="property-menu" href="#" class="dropdown-toggle wid200" data-toggle="dropdown" style="">Available Properties <i class="iconDownOpen"></i></a>
+					<ul class="dropdown-menu wid200" style="padding:0;">
 						<li><a id="availableproperties-item" href="#">Available Properties</a></li>
 						<li><a id="savedproperties-item" href="#">Saved Properties</a></li>
 						<li><a href="/application">Application</a></li>
@@ -15,9 +15,9 @@
 				</div>
 			</div>
 			<div class="col-sm-4 col-sm-offset-4">
-				<div class="dropdown" style="padding-top: 10px; padding-bottom: 10px;">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-size: 18px; padding: 5px; border: 1px solid #ddd; color: #7c807b; border-radius: 5px;">Sort: Featured <b class="caret"></b></a>
-					<ul class="dropdown-menu">
+				<div class="dropdown" style="padding-top: 10px; margin-bottom: 10px;">
+					<a href="#" class="dropdown-toggle wid200" data-toggle="dropdown" style="">Sort: Featured <i class="iconDownOpen"></i></a>
+					<ul class="dropdown-menu wid200" style="padding: 0;">
 						<li><a href="#">Sort: Featured</a></li>
 						<li><a href="#">Sort: Newest</a></li>
 						<li><a href="#">Sort: Price (Lo-Hi)</a></li>
@@ -92,7 +92,7 @@
 			{{ $estates->links() }}
 		</div>	
 	</div>
-	<div class="col-md-6 col-xs-12">
+	<div class="col-md-6 col-xs-12" style="padding: 0px;">
 		<div class="map-column" style="position: fixed; width: 50%; height: 100%;">
 			<div id="mapview" class="map-div col-xs-12"></div>
 		</div>
