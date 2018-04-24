@@ -20,8 +20,8 @@
 					<ul class="dropdown-menu wid200" style="padding: 0;">
 						<li><a href="#">Sort: Featured</a></li>
 						<li><a href="#">Sort: Newest</a></li>
-						<li><a href="#">Sort: Price (Lo-Hi)</a></li>
-						<li><a href="#">Sort: Price (Hi-Lo)</a></li>
+						<li><a href="/lohi_sort">Sort: Price (Lo-Hi)</a></li>
+						<li><a href="/hilo_sort">Sort: Price (Hi-Lo)</a></li>
 						<li><a href="#">Sort: Favorites</a></li>
 					</ul>
 				</div>
@@ -321,7 +321,7 @@ $(document).ready(function () {
 		$("#Address1").text(JSON.parse(res.Address)["commons:FullStreetAddress"]);
 		$("#Address2").text(JSON.parse(res.Address)["commons:City"] + " " + JSON.parse(res.Address)["commons:StateOrProvince"] + " " + JSON.parse(res.Address)["commons:PostalCode"]);
 		// ---------------------------------------
-		$('#myModal').show();
+		$('#myModal').show();		
 	}
 });
 </script>

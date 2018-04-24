@@ -203,13 +203,14 @@ ul.show-list li {
 }
 
 .map-label {
-  background: #25d025;
-  color: white;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 5px;
-  border-radius: 1000px;
+  background: #20c063;
+  color: #e1ecdc;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 3px;
+  border-radius: 10px;
   width: auto;
+  box-shadow: 3px 3px 2px #888888
 }
 
 .backgroundBasic {

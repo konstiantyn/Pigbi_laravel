@@ -72,6 +72,11 @@ class SiteController extends Controller
         return view('homepage',['estates' => $data]);
     }
     
+    public function increasesort(Request $request)
+    {
+        
+    }
+
     public function detail(Request $request)
     {
         $id = $request->get("ID");

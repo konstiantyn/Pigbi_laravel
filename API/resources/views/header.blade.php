@@ -13,15 +13,21 @@
 	<script type="text/javascript">
 			// console.log('adfadfadfadfad');
 		var searchresult = {!! json_encode($estates) !!};
-		// console.log(searchresult);
+		console.log(searchresult);
 
-		var locations = [];
+		var locations = [], imageurls = [];
 		for (var i = 0; i < searchresult.data.length; ++ i) {
 			// console.log(JSON.parse(searchresult.data[i].Location));
 			locations.push({
 				la: JSON.parse(searchresult.data[i].Location).Latitude,
 				lo: JSON.parse(searchresult.data[i].Location).Longitude
 			});
+			console.log(JSON.parse(searchresult.data[i].Photos).Photo.MediaURL);
+			if (JSON.parse(searchresult.data[i].Photos).Photo.MediaURL != undefined)
+				imageurls.push(JSON.parse(searchresult.data[i].Photos).Photo.MediaURL);
+			else
+				imageurls.push(JSON.parse(searchresult.data[i].Photos).Photo[0].MediaURL);
+			// console.log(JSON.parse(searchresult.data[i].Photos));
 		}
 		console.log(locations);
 	</script>

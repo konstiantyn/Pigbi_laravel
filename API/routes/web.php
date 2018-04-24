@@ -19,6 +19,8 @@ Route::get('/test2', 'EstateController@test2');
 Route::post('/search', 'SiteController@search');
 Route::get("/autocomplete",array('as'=>'autocomplete','uses'=> 'SiteController@autocomplete'));
 Route::get("/detail", "SiteController@detail");
+Route::get("/lohi_sort", "SiteController@increasesort");
+Route::get("/hilo_sort", "SiteController@decreasesort");
 
 // Route::get('/saved', 'SiteController@saved');
 // Route::get('/', 'SiteController@approved');

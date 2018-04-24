@@ -22,17 +22,18 @@ _MapObj.prototype.init = function () {
       span.className = 'map-label';
       span.textContent = '$155.3K';
     }
-    
-    var img;
+    // console.log(this.args.imageurl);
+    var img; var ID = this.args.IDforSearch;
     if (!img) {
       img = this.img = document.createElement('img');
       img.className = 'show-on-map';
+      img.id = this.args.marker_id;
       img.style.display = 'none';
       img.style.width = '150px';
       img.style.height = '150px';
       img.style.marginLeft = '-50px';
       img.style.zIndex = 1000;
-      img.src = "//thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/ISahrp29yiicls0000000000.jpg";
+      img.src = this.args.imageurl;
     }
 
     if (!div) {
@@ -45,6 +46,7 @@ _MapObj.prototype.init = function () {
       div.style.cursor = 'pointer';
       div.style.width = '20px';
       div.style.height = '20px';
+      div.style.zIndex = 400;
       
       div.appendChild(span);
       div.appendChild(img);
@@ -64,7 +66,16 @@ _MapObj.prototype.init = function () {
         this.childNodes[1].style.display = 'none';
         google.maps.event.trigger(self, "click");
       });
-/*
+
+      google.maps.event.addDomListener(div, "click", function(event) {
+        $.ajax({
+          url: "/detail",
+          method: "GET",
+          data: { ID: ID },
+          success: detailView
+        });
+      });
+      /*
       google.maps.event.addDomListener(window, 'load', function () {
         autocomplete = new google.maps.places.Autocomplete(document.getElementById('addressSearch'));
         google.maps.event.addListener(autocomplete, 'place_changed', getPlaceInfo);
@@ -101,14 +112,10 @@ _MapObj.prototype.init = function () {
   CustomMarker.prototype.getPosition = function() {
     return this.latlng; 
   };
-
   var center, la=Number(locations[0].la), lo=Number(locations[0].lo);
-  console.log(locations);
   for (var i = 0; i < locations.length; ++ i) {
-    // console.log(typeof(Number(locations[i].la)), Number(locations[i].la)+100)
     la = (la + Number(locations[i].la)) / 2;
     lo = (lo + Number(locations[i].lo)) / 2;
-    // console.log(la + " "  + lo);
   }
   
   var center = new google.maps.LatLng(la, lo);console.log(la + " " + lo);
@@ -119,22 +126,19 @@ _MapObj.prototype.init = function () {
 
   for (var i = 0; i < locations.length; ++ i) {
     var loc = locations[i];
-
     var myLatlng = new google.maps.LatLng(loc.la, loc.lo);
-    // console.log(myLatlng);
     var overlay = new CustomMarker(
       myLatlng, 
       map,
       {
+        IDforSearch: searchresult.data[i].id,
         marker_id: 'pigbimap'+i,
-        colour: 'Red'
+        colour: 'Red',
+        imageurl: imageurls[i]
       }
     );
   
-  }
-
-
-  
+  }  
   /*var image = "<a href='#' id='ISqt3snhq4xsz51000000000' class='map-label'><span>$2.3m</span></a>";
   //'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
   var beachMarker = new google.maps.Marker({
@@ -144,7 +148,11 @@ _MapObj.prototype.init = function () {
     content: "<a href='#' id='ISqt3snhq4xsz51000000000' class='map-label'><span>$2.3m</span></a>"
   });*/
   
- 
+  $('div.cardItem').hover(function () {
+    var index = $(this).find('img.img-grid').data('id') % 30;
+    $('#pigbimap'+index).toggle();
+    map.setCenter(new google.maps.LatLng(Number(locations[index].la), Number(locations[index].lo)));    
+  });  
 }
 
 window.initMap = function(){
@@ -163,3 +171,47 @@ function initMap(locations) {
   
 }
 */
+function detailView(res) {
+    $('#Taxes').text("$"+JSON.parse(res.Taxes).Tax.Amount+"/mo");
+    $('#ListPrice').text("$"+res.ListPrice);
+    $('#Bedrooms').text(res.Bedrooms);
+    $('#Bathrooms').text(res.Bathrooms);
+    $('#PropertySubType').text(res.PropertySubType);
+    $('#ListingDate').text(res.ListingDate);
+    // --------------------------------------
+    $('#ListingTitle').text(res.ListingTitle);
+    $('#ListingDescription').text(res.ListingDescription);
+
+    console.log(JSON.parse(res.Photos).Photo);
+    var photos = "";
+    var indicators = "";
+    for (var i = 0; i < JSON.parse(res.Photos).Photo.length; ++ i) {
+      if (i == 0) {
+        indicators += '<li data-target="#myCarousel" data-slide-to="' + i + '" class="active"></li>';
+        photos +=   '<div class="item active">' +
+              '<img class="center" src="' + JSON.parse(res.Photos).Photo[i].MediaURL +
+              '" alt="New York"></div>';
+      }
+      else {
+        indicators += '<li data-target="#myCarousel" data-slide-to="' + i + '"></li>'
+        photos +=   '<div class="item">' +
+              '<img class="center" src="' + JSON.parse(res.Photos).Photo[i].MediaURL +
+              '" alt="New York"></div>';
+      }
+    }
+    total_slides_counts = JSON.parse(res.Photos).Photo.length;
+    document.getElementById("Photos").innerHTML = photos;
+    document.getElementById("photo_indicators").innerHTML = indicators;
+    $("#total_slides_counts").text(total_slides_counts);
+    // --------------------------------------
+    $("#FullName").text(JSON.parse(res.ListingParticipants).Participant.FirstName + " " + JSON.parse(res.ListingParticipants).Participant.LastName);
+    $("#PrimaryContactPhone").text(getFormattedPhoneNumber(JSON.parse(res.ListingParticipants).Participant.PrimaryContactPhone));
+    $("#OfficePhone").text(getFormattedPhoneNumber(JSON.parse(res.ListingParticipants).Participant.OfficePhone));
+    $("#Address1").text(JSON.parse(res.Address)["commons:FullStreetAddress"]);
+    $("#Address2").text(JSON.parse(res.Address)["commons:City"] + " " + JSON.parse(res.Address)["commons:StateOrProvince"] + " " + JSON.parse(res.Address)["commons:PostalCode"]);
+    // ---------------------------------------
+    $('#myModal').show();   
+  }
+  function getFormattedPhoneNumber(num) {
+    return "(" + num.slice(0,3) + ") " + num.slice(3,6) + "-" + num.slice(6);
+  }
