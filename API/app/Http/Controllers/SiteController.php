@@ -74,12 +74,20 @@ class SiteController extends Controller
     
     public function increasesort(Request $request)
     {
-        $data = \App\Estate::orderBy('ListPrice')->get();
+        $data = \App\Estate::orderBy('ListPrice')->paginate(30);
+        return view('homepage',['estates' => $data]);
     }
 
-    public function dereasesort(Request $request)
+    public function decreasesort(Request $request)
     {
-        
+        $data = \App\Estate::orderBy('ListPrice', 'desc')->paginate(30);
+        return view('homepage',['estates' => $data]);
+    }
+
+    public function newestsort(Request $request)
+    {
+        $data = \App\Estate::orderBy('ListingDate', 'desc')->paginate(30);
+        return view('homepage',['estates' => $data]);
     }
 
     public function detail(Request $request)

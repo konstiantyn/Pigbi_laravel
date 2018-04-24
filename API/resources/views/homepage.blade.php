@@ -19,7 +19,7 @@
 					<a href="#" class="dropdown-toggle wid200" data-toggle="dropdown" style="">Sort: Featured <i class="iconDownOpen"></i></a>
 					<ul class="dropdown-menu wid200" style="padding: 0;">
 						<li><a href="#">Sort: Featured</a></li>
-						<li><a href="#">Sort: Newest</a></li>
+						<li><a href="/newest">Sort: Newest</a></li>
 						<li><a href="/lohi_sort">Sort: Price (Lo-Hi)</a></li>
 						<li><a href="/hilo_sort">Sort: Price (Hi-Lo)</a></li>
 						<li><a href="#">Sort: Favorites</a></li>
