@@ -210,7 +210,10 @@ ul.show-list li {
   padding: 3px;
   border-radius: 10px;
   width: auto;
-  box-shadow: 3px 3px 2px #888888
+  /*box-shadow: 3px 3px 2px #888888*/
+}
+.map-label:hover {
+  border: 5px solid rgba(34,137,89,.5);
 }
 
 .backgroundBasic {

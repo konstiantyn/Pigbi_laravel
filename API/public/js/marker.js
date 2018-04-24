@@ -32,7 +32,7 @@ _MapObj.prototype.init = function () {
       img.style.width = '150px';
       img.style.height = '150px';
       img.style.marginLeft = '-50px';
-      img.style.zIndex = 1000;
+      // img.style.zIndex = 1000;
       img.src = this.args.imageurl;
     }
 
@@ -46,7 +46,7 @@ _MapObj.prototype.init = function () {
       div.style.cursor = 'pointer';
       div.style.width = '20px';
       div.style.height = '20px';
-      div.style.zIndex = 400;
+      div.style.zIndex = 100;
       
       div.appendChild(span);
       div.appendChild(img);
@@ -58,12 +58,14 @@ _MapObj.prototype.init = function () {
       google.maps.event.addDomListener(div, "mouseover", function(event) {
         console.log('clicked');
         this.childNodes[1].style.display = 'block';
+        this.style.zIndex = 400;
         google.maps.event.trigger(self, "click");
       });
       
       google.maps.event.addDomListener(div, "mouseleave", function(event) {
         console.log('clicked leave');
         this.childNodes[1].style.display = 'none';
+        this.style.zIndex = 100;
         google.maps.event.trigger(self, "click");
       });
 
