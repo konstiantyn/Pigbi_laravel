@@ -20,7 +20,7 @@ _MapObj.prototype.init = function () {
     if (!span) {
       span = this.span = document.createElement('span');
       span.className = 'map-label';
-      span.textContent = '$155.3K';
+      span.textContent = this.args.price;
     }
     // console.log(this.args.imageurl);
     var img; var ID = this.args.IDforSearch;
@@ -134,7 +134,8 @@ _MapObj.prototype.init = function () {
         IDforSearch: searchresult.data[i].id,
         marker_id: 'pigbimap'+i,
         colour: 'Red',
-        imageurl: imageurls[i]
+        imageurl: imageurls[i],
+        price: searchresult.data[i].ListPrice/1000 + 'K'
       }
     );
   
