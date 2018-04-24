@@ -74,6 +74,11 @@ class SiteController extends Controller
     
     public function increasesort(Request $request)
     {
+        $data = \App\Estate::orderBy('ListPrice')->get();
+    }
+
+    public function dereasesort(Request $request)
+    {
         
     }
 

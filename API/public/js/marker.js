@@ -41,7 +41,7 @@ _MapObj.prototype.init = function () {
       div = this.div = document.createElement('div');
       
       div.className = 'marker';
-      
+      div.id = "wrap"+this.args.marker_id;
       div.style.position = 'absolute';
       div.style.cursor = 'pointer';
       div.style.width = '20px';
@@ -150,12 +150,25 @@ _MapObj.prototype.init = function () {
     icon: ' ',
     content: "<a href='#' id='ISqt3snhq4xsz51000000000' class='map-label'><span>$2.3m</span></a>"
   });*/
+  var previous_elemet1, previous_elemet2;
   
-  $('div.cardItem').hover(function () {
-    var index = $(this).find('img.img-grid').data('id') % 30;
-    $('#pigbimap'+index).toggle();
-    map.setCenter(new google.maps.LatLng(Number(locations[index].la), Number(locations[index].lo)));    
-  });  
+  $('div.cardItem').hover(
+    function() {
+        // Called when the mouse enters the element
+        var index = $(this).find('img.img-grid').data('id') % 30;
+        document.getElementById("wrappigbimap"+index).style.zIndex = "400";
+        $('#pigbimap'+index).show();
+        previous_elemet1 = document.getElementById("wrappigbimap"+index);
+        previous_elemet2 = $('#pigbimap'+index);
+        // console.log("current session=>", document.getElementById("wrappigbimap"+index));
+        map.setCenter(new google.maps.LatLng(Number(locations[index].la), Number(locations[index].lo))); 
+    },
+    function() {
+        // Called when the mouse leaves the element
+        previous_elemet1.style.zIndex = "100";
+        previous_elemet2.hide();
+    }
+  );  
 }
 
 window.initMap = function(){
