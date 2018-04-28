@@ -22,5 +22,13 @@ Route::get("/detail", "SiteController@detail");
 Route::get("/lohi_sort", "SiteController@increasesort");
 Route::get("/hilo_sort", "SiteController@decreasesort");
 Route::get("/newest", "SiteController@newestsort");
+
+// Filters
+Route::get('/ten_thirty', 'SiteController@ten_thirty');
+Route::get('/thirty_firty', 'SiteController@thirty_firty');
+Route::get('/forty_sixty', 'SiteController@forty_sixty');
+Route::get('/sixty_hundred', 'SiteController@sixty_hundred');
+Route::get('/hundred_twentyhun', 'SiteController@hundred_twentyhun');
+
 // Route::get('/saved', 'SiteController@saved');
 // Route::get('/', 'SiteController@approved');

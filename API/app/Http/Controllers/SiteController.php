@@ -106,6 +106,38 @@ class SiteController extends Controller
         return response()->json($value);
     }
 
+    //filters
+
+    public function ten_thirty() {
+        $data = \App\Estate::whereBetween('ListPrice', [100, 3000])->paginate(30);
+        // print_r($data);
+        return view('homepage', ['estates' => $data]);
+    }
+
+    public function thirty_firty() {
+        $data = \App\Estate::whereBetween('ListPrice', [3000, 4000])->paginate(30);
+        // print_r($data);
+        return view('homepage', ['estates' => $data]);
+    }
+
+    public function forty_sixty() {
+        $data = \App\Estate::whereBetween('ListPrice', [4000, 6000])->paginate(30);
+        // print_r($data);
+        return view('homepage', ['estates' => $data]);
+    }
+
+    public function sixty_hundred() {
+        $data = \App\Estate::whereBetween('ListPrice', [6000, 10000])->paginate(30);
+        // print_r($data);
+        return view('homepage', ['estates' => $data]);
+    }
+
+    public function hundred_twentyhun() {
+        $data = \App\Estate::whereBetween('ListPrice', [10000, 12000])->paginate(30);
+        // print_r($data);
+        return view('homepage', ['estates' => $data]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
