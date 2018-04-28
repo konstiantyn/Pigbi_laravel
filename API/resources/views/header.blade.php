@@ -134,13 +134,11 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle wid150" data-toggle="dropdown">More<i class="iconDownOpen"></i></a>
 					<ul class="dropdown-menu wid150">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li class="divider"></li>
-						<li><a href="#">separated link</a></li>
+						<li><a href="#">Air Conditioning</a></li>
+						<li><a href="#">Microwave</a></li>
+						<li><a href="#">Pool/Hot Tub</a></li>
+						<li><a href="#">Gym</a></li>
+						<li><a href="#">Dishwasher</a></li>
 					</ul>
 				</li>
 			</ul>
