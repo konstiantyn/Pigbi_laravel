@@ -94,22 +94,19 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle wid150" data-toggle="dropdown">Any Price<i class="iconDownOpen"></i></a>
 					<ul class="dropdown-menu wid150">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else</a></li>
-						<li><a href="#">Separated link</a></li>
-						<li><a href="#">separated link</a></li>
+						<li><a href="#">10~30K</a></li>
+						<li><a href="#">30~40K</a></li>
+						<li><a href="#">40~60K</a></li>
+						<li><a href="#">60~100K</a></li>
+						<li><a href="#">100~120K</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle wid150" data-toggle="dropdown">All Beds<i class="iconDownOpen"></i></a>
 					<ul class="dropdown-menu wid150">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li><a href="#">Separated link</a></li>
-						<li class="divider"></li>
-						<li><a href="#">separated link</a></li>
+						<li><a href="#">1~2 Beds</a></li>
+						<li><a href="#">2~4 Beds</a></li>
+						<li><a href="#">4~6 Beds</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">

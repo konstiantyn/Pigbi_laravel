@@ -142,7 +142,7 @@
     				<p id="PartialBathrooms"></p>
     				<p id="ThreeQuarterBathrooms"></p>
     				<p id="PropertySubType">Multi-Family</p>
-    				<p>Refrigerator</p>
+    				<p>Area: <span id="LivingArea"></span></p>
     				<p>Dishwasher</p>
     				<p>Microwave</p>
     				<p>Washer</p>
@@ -283,12 +283,14 @@ $(document).ready(function () {
 	});
 
 	function detailView(res) {
+		console.log(JSON.parse(res.Address));
 		$('#Taxes').text("$"+JSON.parse(res.Taxes).Tax.Amount+"/mo");
 		$('#ListPrice').text("$"+res.ListPrice);
 		$('#Bedrooms').text(res.Bedrooms);
 		$('#Bathrooms').text(res.Bathrooms);
 		$('#PropertySubType').text(res.PropertySubType);
 		$('#ListingDate').text(res.ListingDate);
+		$('#LivingArea').text(res.LivingArea);
 		// --------------------------------------
 		$('#ListingTitle').text(res.ListingTitle);
 		$('#ListingDescription').text(res.ListingDescription);
