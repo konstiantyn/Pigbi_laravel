@@ -124,13 +124,9 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle wid200" data-toggle="dropdown">All Rental Types<i class="iconDownOpen"></i></a>
 					<ul class="dropdown-menu wid200">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
+						<li><a href="#">Single</a></li>
+						<li><a href="#">Multi</a></li>
+						<li><a href="#">Triple</a></li>
 					</ul>
 				</li>
 			</ul>
