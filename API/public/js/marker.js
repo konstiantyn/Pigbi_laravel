@@ -162,11 +162,13 @@ _MapObj.prototype.init = function () {
         previous_elemet2 = $('#pigbimap'+index);
         // console.log("current session=>", document.getElementById("wrappigbimap"+index));
         map.setCenter(new google.maps.LatLng(Number(locations[index].la), Number(locations[index].lo))); 
+        // map.setZoom(14);
     },
     function() {
         // Called when the mouse leaves the element
         previous_elemet1.style.zIndex = "100";
         previous_elemet2.hide();
+        // map.setZoom(11);
     }
   );  
 }

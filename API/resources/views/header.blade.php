@@ -54,9 +54,9 @@
 		<div class="collapse navbar-collapse" id="main-header">
 			<ul class="nav navbar-nav navbar-right">
 				<li class="saved"><a href="#">Saved</a></li>
-				<li>
-					<button type="submit" class="btn navbar-btn btn-white" style="padding: 3px 10px; font-size: 15px;">Sign in</button>
-		            <button type="submit" class="btn navbar-btn btn-success"  style="padding: 3px 10px; font-size: 15px;">Register</button>
+				<li class="cls_autho">
+					<button onclick="gosigninfunc()" type="submit" class="btn navbar-btn btn-white" style="padding: 3px 10px; font-size: 14px; font-weight: 550;">Sign in</button>
+		            <button onclick="gosignupfunc()" type="submit" class="btn navbar-btn btn-success"  style="border: none; padding: 3px 10px; font-size: 15px; font-weight: 550;">Register</button>
 				</li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
@@ -87,6 +87,14 @@
 				});
 
 				window.onscroll=function(){setfixedheader()};var header=document.getElementById("pigbi_header");var sticky=header.offsetTop;function setfixedheader(){if(window.pageYOffset>sticky){header.classList.add("sticky");}else{header.classList.remove("sticky");}}
+                
+                function gosigninfunc() {
+                    window.location.href = "url_signin";
+                }
+                
+                function gosignupfunc() {
+                    window.location.href = "url_signup";
+                }
 			</script>
 		</form>
 		<div class="sub-menu-options">
@@ -94,19 +102,19 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle wid150" data-toggle="dropdown">Any Price<i class="iconDownOpen"></i></a>
 					<ul class="dropdown-menu wid150">
-						<li><a href="/ten_thirty">10~30K</a></li>
-						<li><a href="/thirty_firty">30~40K</a></li>
-						<li><a href="/forty_sixty">40~60K</a></li>
-						<li><a href="/sixty_hundred">60~100K</a></li>
-						<li><a href="/hundred_twentyhun">100~120K</a></li>
+						<li><a href="ten_thirty">10~30K</a></li>
+						<li><a href="url_thirty_firty">30~40K</a></li>
+						<li><a href="url_forty_sixty">40~60K</a></li>
+						<li><a href="url_sixty_hundred">60~100K</a></li>
+						<li><a href="url_hundred_twentyhun">100~120K</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle wid150" data-toggle="dropdown">All Beds<i class="iconDownOpen"></i></a>
 					<ul class="dropdown-menu wid150">
-						<li><a href="#">1~2 Beds</a></li>
-						<li><a href="#">2~4 Beds</a></li>
-						<li><a href="#">4~6 Beds</a></li>
+						<li><a href="url_onetwobed">1~2 Beds</a></li>
+						<li><a href="url_twofourbed">2~4 Beds</a></li>
+						<li><a href="url_foursixbed">4~6 Beds</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -142,7 +150,7 @@
 					</ul>
 				</li>
 			</ul>
-			<button type="submit" class="btn navbar-btn btn-success" style="float: right; margin-right: 10px">Save Search</button>
+			<button type="submit" class="btn navbar-btn btn-success" style="float: right; margin-right: 10px; font-weight: 550;">Save Search</button>
 		</div>
 	</div>
 </header>

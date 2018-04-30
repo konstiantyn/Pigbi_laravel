@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -35,5 +37,14 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function Signinfunc( Request $data ) {
+        $var = new User;
+        $var = User::where('name', $data->username)->where('password', $data->password)->first();
+        if (isset($var)) {
+            return redirect('url_homepage');
+        }
+        return redirect('url_signin');
     }
 }

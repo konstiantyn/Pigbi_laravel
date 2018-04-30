@@ -48,6 +48,19 @@
 								<li>
 									<span class="petFriendly">PET FRIENDLY</span>
 								</li>
+								
+								<li>
+									<span class="petFriendly">Newly</span>
+								</li>
+								<li>
+									<span class="petFriendly">Newly</span>
+								</li>
+								<li>
+									<span class="petFriendly">Newly</span>
+								</li>
+								<li>
+									<span class="petFriendly">Newly</span>
+								</li>
 							</ul> -->
 						</div>
 						<div class="backgroundBasic" style="z-index: 3;">
@@ -89,8 +102,10 @@
 				</li>
 				@endforeach
 			</ul>
-			{{ $estates->links() }}
-		</div>	
+            <ul class="cls_pagination">
+                {{ $estates->links() }}
+            </ul>
+		</div>
 	</div>
 	<div class="col-md-6 col-xs-12" style="padding: 0px;">
 		<div class="map-column" style="position: fixed; width: 50%; height: 100%;">
