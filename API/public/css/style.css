@@ -352,6 +352,94 @@ ul.show-list li {
   .cardfooter button {padding-left: 1px; padding-right: 1px;}
 }
 
+@media (max-width: 1255px) {
+    #res_more {
+        float: left !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #unres_header {
+        display: none !important;
+    }
+    #res_availab {
+        display: none !important;
+    }
+    header {
+        height: 0px !important;
+    }
+    #res_sort {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    #res_search {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1137px) {
+    #res_searchform 
+}
+
+@media (max-width: 976px) {
+    #res_anyprice {
+        margin-left: 10px;
+    }
+    #res_savesearch {
+        float: none !important;
+    }
+    #res_filtergroup {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 862px) {
+    #res_more {
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+    #res_filtergroup {
+        margin-bottom: 0px;
+    }
+}
+
+@media (min-width: 992px) {
+    #res_buttons {
+        display: none;
+    }
+}
+
+.floatingmenu {
+    position: fixed;
+    bottom: 5px;
+    top: auto;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.res_btngroup {
+}
+
+.cls_mapbtn {
+    background-color: #20C063;
+    float:  left;
+    border-top-left-radius: 15px !important;
+    border-bottom-left-radius: 15px !important;
+}
+
+.cls_savebtn {
+    background-color: #20C063;
+    
+    border-top-right-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+}
+
+.cls_resbuttons {
+    outline: none !important;
+    font-weight: bolder !important;
+}
 
 @font-face{font-family:Truliacons;src:url(//static.trulia-cdn.com/images/fonts/Truliacons_20160922/fontello.eot);src:url(//static.trulia-cdn.com/images/fonts/Truliacons_20160922/fontello.eot?#iefix) format("embedded-opentype"),url(//static.trulia-cdn.com/images/fonts/Truliacons_20160922/fontello.woff) format("woff"),url(//static.trulia-cdn.com/images/fonts/Truliacons_20160922/fontello.ttf) format("truetype"),url(//static.trulia-cdn.com/images/fonts/Truliacons_20160922/fontello.svg#Truliacons) format("svg");font-weight:400;font-style:normal;font-display:swap}
 .iconActivelife:before,.iconAddress:before,.iconAffordability:before,.iconAgent:before,.iconAir:before,.iconAndroid:before,.iconApple:before,.iconAttach:before,.iconAttention:before,.iconBasket:before,.iconBath:before,.iconBed:before,.iconBell:before,.iconBike:before,.iconBlock:before,.iconBlog:before,.iconBookmark:before,.iconCalendar:before,.iconCamera:before,.iconCancel:before,.iconCar:before,.iconCat:before,.iconChartArea:before,.iconChartBar:before,.iconChartLine:before,.iconChartPie:before,.iconChat:before,.iconCheck:before,.iconCircledHelp:before,.iconCity:before,.iconClock:before,.iconCloud:before,.iconCoffee:before,.iconCog:before,.iconComment:before,.iconCreditCard:before,.iconCrime:before,.iconCup:before,.iconDirection:before,.iconDocs:before,.iconDog:before,.iconDown:before,.iconDownOpen:before,.iconExport:before,.iconEye:before,.iconFHEO:before,.iconFacebook:before,.iconFlag:before,.iconFlight:before,.iconFloorplan:before,.iconFolder:before,.iconFood:before,.iconForward:before,.iconFuel:before,.iconGlobe:before,.iconGooglePlus:before,.iconGraduationCap:before,.iconHeart:before,.iconHeartActive:before,.iconHeartEmpty:before,.iconHeartInactive:before,.iconHelp:before,.iconHome:before,.iconHomeWorth:before,.iconHourGlass:before,.iconInbox:before,.iconInfo:before,.iconInstagram:before,.iconLeaf:before,.iconLeft:before,.iconLeftOpen:before,.iconLinkedin:before,.iconList:before,.iconLocation:before,.iconMail:before,.iconMap:before,.iconMegaphone:before,.iconMenu:before,.iconMessageCompose:before,.iconMessageView:before,.iconMinus:before,.iconMobile:before,.iconMoon:before,.iconMortgage:before,.iconMultifamily:before,.iconNoteBeamed:before,.iconPaperPlane:before,.iconPencil:before,.iconPhone:before,.iconPicture:before,.iconPig:before,.iconPinterest:before,.iconPlus:before,.iconPopup:before,.iconPrint:before,.iconQuote:before,.iconRent:before,.iconReply:before,.iconReplyAll:before,.iconResizeFull:before,.iconResizeSmall:before,.iconRestaurants:before,.iconRight:before,.iconRightOpen:before,.iconRocket:before,.iconSearch:before,.iconShopping:before,.iconStar:before,.iconStarActive:before,.iconStarDefault:before,.iconStarEmpty:before,.iconStarNotification:before,.iconStarShield:before,.iconTag:before,.iconThumbsDown:before,.iconThumbsUp:before,.iconTicket:before,.iconTransit:before,.iconTrash:before,.iconTrophy:before,.iconTwitter:before,.iconUp:before,.iconUpOpen:before,.iconUser:before,.iconUserAdd:before,.iconUsers:before,.iconVcard:before,.iconVideo:before,.iconWalking:before,.iconZombieHand:before,.ratingStar .ratingGroup .ratingOn label:before,.ratingStar .ratingGroup label:before,.toggleArrow:before,.toggleArrowActive:before{font-family:Truliacons;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1.1em;margin-right:.2em;vertical-align:baseline;text-align:center;font-variant:normal;text-transform:none}

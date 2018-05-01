@@ -1,9 +1,9 @@
 @extends('header')
 @section('content')
 <div class="col-sm-12 content" style="/*margin-top: 110px;*/ padding: 0px !important;">
-	<div class="col-md-6 col-xs-12" style="padding: 0px !important;">
+	<div id="res_gallery" class="col-md-6 col-xs-12" style="padding: 0px !important;">
 		<div class="filter-options col-sm-12" style="background: #ddd;">
-			<div class="col-sm-4">
+			<div class="col-sm-4" id="res_availab">
 				<div class="dropdown" style="padding-top: 10px; margin-bottom: 10px;">
 					<a id="property-menu" href="#" class="dropdown-toggle wid200" data-toggle="dropdown" style="">Available Properties <i class="iconDownOpen"></i></a>
 					<ul class="dropdown-menu wid200" style="padding:0;">
@@ -14,7 +14,41 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-sm-4 col-sm-offset-4">
+			<form class="navbar-form navbar-left search-line" id="res_search" action="/search" role="search" method="POST">
+				<div class="form-group col-xs-10">
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					<input type="text" id="statnewname" name="Address" class="form-control" placeholder="Search">
+				</div>
+				<button type="submit" class="btn btn-default col-xs-2">
+					<i class="iconSearch"></i>
+				</button>
+				<script type="text/javascript">
+					$('#statnewname').autocomplete({
+						source : "{!!URL::route('autocomplete')!!}",
+						minlenght: 1,
+						autoFocus: false,
+						select: function(e,ui){
+							console.log(ui);
+						}
+					});
+					$('#statnewname').keydown(function (e) {
+						console.log(e);
+						/*if(e.keyCode == 13) {
+							location.href = "/search?" + $(this).val();
+						}*/
+					});
+					window.onscroll=function(){setfixedheader()};var header=document.getElementById("pigbi_header");var sticky=header.offsetTop;function setfixedheader(){if(window.pageYOffset>sticky){header.classList.add("sticky");}else{header.classList.remove("sticky");}}
+	                
+	                function gosigninfunc() {
+	                    window.location.href = "url_signin";
+	                }
+	                
+	                function gosignupfunc() {
+	                    window.location.href = "url_signup";
+	                }
+				</script>
+			</form>
+			<div class="col-sm-4 col-sm-offset-4" id="res_sort">
 				<div class="dropdown" style="padding-top: 10px; margin-bottom: 10px;">
 					<a href="#" class="dropdown-toggle wid200" data-toggle="dropdown" style="">Sort: Featured <i class="iconDownOpen"></i></a>
 					<ul class="dropdown-menu wid200" style="padding: 0;">
@@ -25,6 +59,9 @@
 						<li><a href="#">Sort: Favorites</a></li>
 					</ul>
 				</div>
+			</div>
+			<div class="col-sm-4">
+				<button class="btn">Filter</button>
 			</div>
 		</div>
 		<div id="AvailableProperties">
@@ -107,12 +144,33 @@
             </ul>
 		</div>
 	</div>
-	<div class="col-md-6 col-xs-12" style="padding: 0px;">
-		<div class="map-column" style="position: fixed; width: 50%; height: 100%;">
+	<div id="res_map" class="col-md-6 col-xs-12" style="padding: 0px;">
+		<div id="res_map1" class="map-column" style="position: fixed; width: 50%; height: 100%;">
 			<div id="mapview" class="map-div col-xs-12"></div>
 		</div>
 	</div>
 </div>
+<div id="res_buttons" class="floatingmenu container-fluid">
+	<div class="res_btngroup">
+		<button onclick="savefunction()" class="btn cls_resbuttons cls_savebtn">Save</button>
+		<button id="mapbutton" onclick="mapfunction()" class="btn cls_resbuttons cls_mapbtn">Map</button>
+	</div>
+</div>
+<script type="text/javascript">
+	function mapfunction() {
+		if (document.getElementById("mapbutton").textContent == "Map" ) {
+			document.getElementById('AvailableProperties').style.display = "none";
+			document.getElementById('res_map').style.width = "100%";
+			document.getElementById('mapbutton').innerHTML = "List";	
+		}
+		else {
+			document.getElementById("res_map").style.display = "none";
+			document.getElementById("AvailableProperties").style.display = "block";
+			document.getElementById("AvailableProperties").style.width = "100%";
+			document.getElementById("mapbutton").innerHTML = "Map";
+		}
+	}
+</script>
 <div id="myModal" class="modal">
 	<div class="modal-header">
       <span class="closeBtn">&times;</span>

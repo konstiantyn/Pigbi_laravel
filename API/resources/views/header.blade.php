@@ -38,7 +38,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBibcxCybips4ljfrOE8BibQFSBVPaoKyY&libraries=places&callback=initMap" async defer></script>
 </head>
 <body style="background: #ddd;">
-<header style="/*position: fixed;*/ width: 100%; height: 100px; z-index: 100;" class="header" id="pigbi_header">	
+<header style="/*position: fixed;*/ width: 100%; height: 100px; z-index: 100;" class="header" id="pigbi_header">
 	<nav class="navbar navbar-green" role="navigation" style="padding-right: 10px;">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -61,8 +61,8 @@
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</nav>
-	<div class="navbar" style="background: #fff;">
-		<form class="navbar-form navbar-left search-line" action="/search" role="search" method="POST">
+	<div class="navbar" id="unres_header" style="background: #fff;">
+		<form id="res_searchform" class="navbar-form navbar-left search-line" action="/search" role="search" method="POST">
 			<div class="form-group col-xs-10">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<input type="text" id="statnewname" name="Address" class="form-control" placeholder="Search">
@@ -85,7 +85,6 @@
 						location.href = "/search?" + $(this).val();
 					}*/
 				});
-
 				window.onscroll=function(){setfixedheader()};var header=document.getElementById("pigbi_header");var sticky=header.offsetTop;function setfixedheader(){if(window.pageYOffset>sticky){header.classList.add("sticky");}else{header.classList.remove("sticky");}}
                 
                 function gosigninfunc() {
@@ -98,8 +97,8 @@
 			</script>
 		</form>
 		<div class="sub-menu-options">
-			<ul class="nav navbar-nav">
-				<li class="dropdown">
+			<ul class="nav navbar-nav" id="res_filtergroup">
+				<li class="dropdown" id="res_anyprice">
 					<a href="#" class="dropdown-toggle wid150" data-toggle="dropdown">Any Price<i class="iconDownOpen"></i></a>
 					<ul class="dropdown-menu wid150">
 						<li><a href="ten_thirty">10~30K</a></li>
@@ -138,8 +137,8 @@
 					</ul>
 				</li>
 			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
+			<ul class="nav navbar-nav navbar-right" id="res_more">
+				<li class="dropdown" id="res_more">
 					<a href="#" class="dropdown-toggle wid150" data-toggle="dropdown">More<i class="iconDownOpen"></i></a>
 					<ul class="dropdown-menu wid150">
 						<li><a href="#">Air Conditioning</a></li>
@@ -150,7 +149,7 @@
 					</ul>
 				</li>
 			</ul>
-			<button type="submit" class="btn navbar-btn btn-success" style="float: right; margin-right: 10px; font-weight: 550;">Save Search</button>
+			<button type="submit" id="res_savesearch" class="btn navbar-btn btn-success" style="float: right; margin-right: 10px; font-weight: 550;">Save Search</button>
 		</div>
 	</div>
 </header>
