@@ -1,27 +1,112 @@
 @extends('header')
 @section('content')
-<div class="col-sm-12 content" style="/*margin-top: 110px;*/ padding: 0px !important;">
+<div id="main_content" class="col-sm-12 content" style="/*margin-top: 110px;*/ padding: 0px !important;">
+
 	<div id="res_gallery" class="col-md-6 col-xs-12" style="padding: 0px !important;">
-		<div class="filter-options col-sm-12" style="background: #ddd;">
-			<div class="col-sm-4" id="res_availab">
-				<div class="dropdown" style="padding-top: 10px; margin-bottom: 10px;">
-					<a id="property-menu" href="#" class="dropdown-toggle wid200" data-toggle="dropdown" style="">Available Properties <i class="iconDownOpen"></i></a>
-					<ul class="dropdown-menu wid200" style="padding:0;">
-						<li><a id="availableproperties-item" href="#">Available Properties</a></li>
-						<li><a id="savedproperties-item" href="#">Saved Properties</a></li>
-						<li><a href="/application">Application</a></li>
-						<li><a href="/approvals">Approvals</a></li>
-					</ul>
+		<div class="filter-options" style="background: #ddd;">
+			<div id="filter-option-desktop">
+				<div class="col-sm-4" id="res_availab">
+					<div class="dropdown" style="padding-top: 10px; margin-bottom: 10px;">
+						<a id="property-menu" href="#" class="dropdown-toggle wid200" data-toggle="dropdown" style="">Available Properties <i class="iconDownOpen"></i></a>
+						<ul class="dropdown-menu wid200" style="padding:0;">
+							<li><a id="availableproperties-item" href="#">Available Properties</a></li>
+							<li><a id="savedproperties-item" href="#">Saved Properties</a></li>
+							<li><a href="/application">Application</a></li>
+							<li><a href="/approvals">Approvals</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-4 col-sm-offset-4" id="res_sort">
+					<div class="dropdown" style="padding-top: 10px; margin-bottom: 10px;">
+						<a href="#" class="dropdown-toggle wid200" data-toggle="dropdown" style="">Sort: Featured <i class="iconDownOpen"></i></a>
+						<ul class="dropdown-menu wid200" style="padding: 0;">
+							<li><a href="#">Sort: Featured</a></li>
+							<li><a href="/newest">Sort: Newest</a></li>
+							<li><a href="/lohi_sort">Sort: Price (Lo-Hi)</a></li>
+							<li><a href="/hilo_sort">Sort: Price (Hi-Lo)</a></li>
+							<li><a href="#">Sort: Favorites</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-			<form class="navbar-form navbar-left search-line" id="res_search" action="/search" role="search" method="POST">
-				<div class="form-group col-xs-10">
-					<input type="hidden" name="_token" value="{{ csrf_token() }}">
-					<input type="text" id="statnewname" name="Address" class="form-control" placeholder="Search">
+
+			<div id='filter-option-mobile'>
+				<div class="row" style="margin: 0 1px;">
+					<div class="col-sm-10 col-xs-10 nopadding">
+						<form action="/search" role="search" method="POST">
+							<div class="row" style="margin: 0 1px;">
+								<div class="col-xs-10 nopadding">
+										<input type="hidden" name="_token" value="{{ csrf_token() }}">
+										<input type="text" id="statnewname" name="Address" class="form-control" placeholder="Search">
+								</div>
+								<div class="col-xs-2 nopadding">
+									<button type="submit" class="btn btn-default">
+										<i class="iconSearch"></i>
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-sm-2 col-xs-2 nopadding">
+						<button class="btn btn-default" id="filter_mobile_btn">Filters</button>
+						<button class="btn btn-default" id="filter_mobile_btn_close">Close</button>
+					</div>
 				</div>
-				<button type="submit" class="btn btn-default col-xs-2">
-					<i class="iconSearch"></i>
-				</button>
+				<div id="filter_mobile_option">
+					<div class="row filter-item">
+						<div class="col-sm-12 col-xs-12 nopadding">
+							<select>
+								<option><a href="#">Sort: Featured</a></option>
+								<option><a href="/newest">Sort: Newest</a></option>
+								<option><a href="/lohi_sort">Sort: Price (Lo-Hi)</a></option>
+								<option><a href="/hilo_sort">Sort: Price (Hi-Lo)</a></option>
+								<option><a href="#">Sort: Favorites</a></option>
+							</select>
+							<i class="iconDownOpen"></i>
+						</div>
+					</div>
+					<div class="row filter-item">
+						<p>PRICE</p>
+						<div class="col-sm-5 col-xs-5 nopadding">
+							<select>
+								<option value="0">No Min</option><option value="10000">$10k</option><option value="20000">$20k</option><option value="30000">$30k</option><option value="50000">$50k</option><option value="100000">$100k</option><option value="130000">$130k</option><option value="150000">$150k</option><option value="200000">$200k</option><option value="250000">$250k</option><option value="300000">$300k</option><option value="350000">$350k</option><option value="400000">$400k</option><option value="450000">$450k</option><option value="500000">$500k</option><option value="550000">$550k</option><option value="600000">$600k</option><option value="650000">$650k</option><option value="700000">$700k</option><option value="750000">$750k</option><option value="800000">$800k</option><option value="850000">$850k</option><option value="900000">$900k</option><option value="950000">$950k</option><option value="1000000">$1m</option><option value="1100000">$1.1m</option><option value="1200000">$1.2m</option><option value="1250000">$1.25m</option><option value="1400000">$1.4m</option><option value="1500000">$1.5m</option><option value="1600000">$1.6m</option><option value="1700000">$1.7m</option><option value="1750000">$1.75m</option><option value="1800000">$1.8m</option><option value="1900000">$1.9m</option><option value="2000000">$2m</option><option value="2250000">$2.25m</option><option value="2500000">$2.5m</option><option value="2750000">$2.75m</option><option value="3000000">$3m</option><option value="3500000">$3.5m</option><option value="4000000">$4m</option><option value="5000000">$5m</option><option value="10000000">$10m</option><option value="20000000">$20m</option><option value="" style="display: none; visibility: hidden;">Custom</option>
+							</select>
+							<i class="iconDownOpen"></i>
+						</div>
+						<div class="col-sm-2 col-xs-2 nopadding arrow-forward">–</div>
+						<div class="col-sm-5 col-xs-5 nopadding">
+							<select>
+								<option value="*">No Max</option><option value="10000">$10k</option><option value="20000">$20k</option><option value="30000">$30k</option><option value="50000">$50k</option><option value="100000">$100k</option><option value="130000">$130k</option><option value="150000">$150k</option><option value="200000">$200k</option><option value="250000">$250k</option><option value="300000">$300k</option><option value="350000">$350k</option><option value="400000">$400k</option><option value="450000">$450k</option><option value="500000">$500k</option><option value="550000">$550k</option><option value="600000">$600k</option><option value="650000">$650k</option><option value="700000">$700k</option><option value="750000">$750k</option><option value="800000">$800k</option><option value="850000">$850k</option><option value="900000">$900k</option><option value="950000">$950k</option><option value="1000000">$1m</option><option value="1100000">$1.1m</option><option value="1200000">$1.2m</option><option value="1250000">$1.25m</option><option value="1400000">$1.4m</option><option value="1500000">$1.5m</option><option value="1600000">$1.6m</option><option value="1700000">$1.7m</option><option value="1750000">$1.75m</option><option value="1800000">$1.8m</option><option value="1900000">$1.9m</option><option value="2000000">$2m</option><option value="2250000">$2.25m</option><option value="2500000">$2.5m</option><option value="2750000">$2.75m</option><option value="3000000">$3m</option><option value="3500000">$3.5m</option><option value="4000000">$4m</option><option value="5000000">$5m</option><option value="10000000">$10m</option><option value="20000000">$20m</option><option value="" style="display: none; visibility: hidden;">Custom</option>
+							</select>
+							<i class="iconDownOpen"></i>
+						</div>
+					</div>
+					<div class="row filter-item">
+						<p>BEDROOMS</p>
+						<div class="col-sm-5 col-xs-5 nopadding">
+							<select>
+								<option value="0">No Min</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+							</select>
+							<i class="iconDownOpen"></i>
+						</div>
+						<div class="col-sm-2 col-xs-2 nopadding arrow-forward">–</div>
+						<div class="col-sm-5 col-xs-5 nopadding">
+							<select>
+								<option value="*">No Max</option>
+								<option>Studio</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+							</select>
+							<i class="iconDownOpen"></i>
+						</div>
+					</div>
+				</div>
 				<script type="text/javascript">
 					$('#statnewname').autocomplete({
 						source : "{!!URL::route('autocomplete')!!}",
@@ -46,22 +131,16 @@
 	                function gosignupfunc() {
 	                    window.location.href = "url_signup";
 	                }
+
+	                $(document).ready(function() {
+	                	$('#filter_mobile_btn').click(function() {
+	                		$('#main_content').addClass('filter-option-mobile-expand');
+	                	})
+	                	$('#filter_mobile_btn_close').click(function() {
+	                		$('#main_content').removeClass('filter-option-mobile-expand');
+	                	})
+	                })
 				</script>
-			</form>
-			<div class="col-sm-4 col-sm-offset-4" id="res_sort">
-				<div class="dropdown" style="padding-top: 10px; margin-bottom: 10px;">
-					<a href="#" class="dropdown-toggle wid200" data-toggle="dropdown" style="">Sort: Featured <i class="iconDownOpen"></i></a>
-					<ul class="dropdown-menu wid200" style="padding: 0;">
-						<li><a href="#">Sort: Featured</a></li>
-						<li><a href="/newest">Sort: Newest</a></li>
-						<li><a href="/lohi_sort">Sort: Price (Lo-Hi)</a></li>
-						<li><a href="/hilo_sort">Sort: Price (Hi-Lo)</a></li>
-						<li><a href="#">Sort: Favorites</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<button class="btn">Filter</button>
 			</div>
 		</div>
 		<div id="AvailableProperties">
@@ -144,33 +223,21 @@
             </ul>
 		</div>
 	</div>
+
 	<div id="res_map" class="col-md-6 col-xs-12" style="padding: 0px;">
-		<div id="res_map1" class="map-column" style="position: fixed; width: 50%; height: 100%;">
+		<div id="res_map1" class="map-column">
 			<div id="mapview" class="map-div col-xs-12"></div>
 		</div>
 	</div>
-</div>
-<div id="res_buttons" class="floatingmenu container-fluid">
-	<div class="res_btngroup">
-		<button onclick="savefunction()" class="btn cls_resbuttons cls_savebtn">Save</button>
-		<button id="mapbutton" onclick="mapfunction()" class="btn cls_resbuttons cls_mapbtn">Map</button>
+
+	<div id="res_buttons" class="floatingmenu container-fluid">
+		<div class="res_btngroup">
+			<button onclick="savefunction()" class="btn cls_resbuttons cls_savebtn">Save</button>
+			<button id="map_btn" class="btn cls_resbuttons cls_mapbtn">Map</button>
+			<button id="list_btn" class="btn cls_resbuttons cls_mapbtn">List</button>
+		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	function mapfunction() {
-		if (document.getElementById("mapbutton").textContent == "Map" ) {
-			document.getElementById('AvailableProperties').style.display = "none";
-			document.getElementById('res_map').style.width = "100%";
-			document.getElementById('mapbutton').innerHTML = "List";	
-		}
-		else {
-			document.getElementById("res_map").style.display = "none";
-			document.getElementById("AvailableProperties").style.display = "block";
-			document.getElementById("AvailableProperties").style.width = "100%";
-			document.getElementById("mapbutton").innerHTML = "Map";
-		}
-	}
-</script>
 <div id="myModal" class="modal">
 	<div class="modal-header">
       <span class="closeBtn">&times;</span>
@@ -398,7 +465,20 @@ $(document).ready(function () {
 		// ---------------------------------------
 		$('#myModal').show();		
 	}
+
+	$('.cls_mapbtn').click(function() {
+		$('#main_content').toggleClass('toggle_map')
+	})
 });
 </script>
 @endsection
+
+
+
+
+
+
+
+
+
  

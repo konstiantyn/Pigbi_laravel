@@ -37,7 +37,7 @@
 	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBibcxCybips4ljfrOE8BibQFSBVPaoKyY&libraries=places&callback=initMap" async defer></script> -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBibcxCybips4ljfrOE8BibQFSBVPaoKyY&libraries=places&callback=initMap" async defer></script>
 </head>
-<body style="background: #ddd;">
+<body>
 <header style="/*position: fixed;*/ width: 100%; height: 100px; z-index: 100;" class="header" id="pigbi_header">
 	<nav class="navbar navbar-green" role="navigation" style="padding-right: 10px;">
 		<!-- Brand and toggle get grouped for better mobile display -->
