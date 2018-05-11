@@ -35,7 +35,6 @@
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 	<script src="{{asset('js/marker.js')}}"></script>
 	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBibcxCybips4ljfrOE8BibQFSBVPaoKyY&libraries=places&callback=initMap" async defer></script> -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBibcxCybips4ljfrOE8BibQFSBVPaoKyY&libraries=places&callback=initMap" async defer></script>
 </head>
 <body>
 <header style="/*position: fixed;*/ width: 100%; height: 100px; z-index: 100;" class="header" id="pigbi_header">
@@ -231,6 +230,7 @@ ul.dropdown-menu-custom i {
 	z-index: 1000;
 }
 </style>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBibcxCybips4ljfrOE8BibQFSBVPaoKyY&libraries=places&callback=initMap" async defer></script>
 </html>
 
 

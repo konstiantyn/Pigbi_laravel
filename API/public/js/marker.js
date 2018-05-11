@@ -180,6 +180,7 @@ window.initMap = function(){
   {lat: -33.80010128657071, lng: 151.28747820854187},
   {lat: -34.028249, lng: 151.157507}
   ];*/
+  console.log('maker.js is loaded.');
   var _map = new _MapObj();
   var initMap = _map.init();
 }
