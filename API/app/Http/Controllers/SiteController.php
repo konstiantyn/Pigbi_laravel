@@ -108,51 +108,68 @@ class SiteController extends Controller
 
     //filters
 
-    public function ten_thirty() {
-        $data = \App\Estate::whereBetween('ListPrice', [10000, 30000])->paginate(30);
-        // print_r($data);
+    public function MinPricefilterfunc(Request $request){
+        $price = $request->get("price");
+        $data = \App\Estate::whereBetween('ListPrice', [$price, 2000000])->paginate(30);
         return view('homepage', ['estates' => $data]);
     }
-
-    public function thirty_firty() {
-        $data = \App\Estate::whereBetween('ListPrice', [30000, 40000])->paginate(30);
-        // print_r($data);
+    
+    public function MaxPricefilterfunc(Request $request){
+        $price = $request->get("price");
+        $data = \App\Estate::whereBetween('ListPrice', [10000, $price])->paginate(30);
         return view('homepage', ['estates' => $data]);
     }
-
-    public function forty_sixty() {
-        $data = \App\Estate::whereBetween('ListPrice', [40000, 60000])->paginate(30);
-        // print_r($data);
-        return view('homepage', ['estates' => $data]);
-    }
-
-    public function sixty_hundred() {
-        $data = \App\Estate::whereBetween('ListPrice', [60000, 100000])->paginate(30);
-        // print_r($data);
-        return view('homepage', ['estates' => $data]);
-    }
-
-    public function hundred_twentyhun() {
-        $data = \App\Estate::whereBetween('ListPrice', [100000, 120000])->paginate(30);
-        // print_r($data);
-        return view('homepage', ['estates' => $data]);
-    }
+    
+//    public function ten_thirty() {
+//        $data = \App\Estate::whereBetween('ListPrice', [10000, 30000])->paginate(30);
+//        // print_r($data);
+//        return view('homepage', ['estates' => $data]);
+//    }
+//
+//    public function thirty_firty() {
+//        $data = \App\Estate::whereBetween('ListPrice', [30000, 40000])->paginate(30);
+//        // print_r($data);
+//        return view('homepage', ['estates' => $data]);
+//    }
+//
+//    public function forty_sixty() {
+//        $data = \App\Estate::whereBetween('ListPrice', [40000, 60000])->paginate(30);
+//        // print_r($data);
+//        return view('homepage', ['estates' => $data]);
+//    }
+//
+//    public function sixty_hundred() {
+//        $data = \App\Estate::whereBetween('ListPrice', [60000, 100000])->paginate(30);
+//        // print_r($data);
+//        return view('homepage', ['estates' => $data]);
+//    }
+//
+//    public function hundred_twentyhun() {
+//        $data = \App\Estate::whereBetween('ListPrice', [100000, 120000])->paginate(30);
+//        // print_r($data);
+//        return view('homepage', ['estates' => $data]);
+//    }
 
     // End of Filter by Price
     
     // Filter of Bed
     
-    public function Onetwofunc() {
-        $data = \App\Estate::whereBetween('Bedrooms', [1, 2])->paginate(30);
+    public function Oneplusfunc() {
+        $data = \App\Estate::whereBetween('Bedrooms', [1, 6])->paginate(30);
         return view('homepage', ['estates' => $data]);
     }
     
-    public function Twofourfunc() {
-        $data = \App\Estate::whereBetween('Bedrooms', [2, 4])->paginate(30);
+    public function Twoplusfunc() {
+        $data = \App\Estate::whereBetween('Bedrooms', [2, 6])->paginate(30);
         return view('homepage', ['estates' => $data]);
     }
     
-    public function Foursixfunc() {
+    public function Threeplufunc() {
+        $data = \App\Estate::whereBetween('Bedrooms', [3, 6])->paginate(30);
+        return view('homepage', ['estates' => $data]);
+    }
+    
+    public function Fourplusfunc(){
         $data = \App\Estate::whereBetween('Bedrooms', [4, 6])->paginate(30);
         return view('homepage', ['estates' => $data]);
     }

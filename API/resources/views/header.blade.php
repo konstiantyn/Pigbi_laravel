@@ -103,14 +103,104 @@
 						<ul class="dropdown-menu-custom">
 							<li>
 								<select id="minPrice">
-									<option value="0">No Min</option><option value="10000">$10k</option><option value="20000">$20k</option><option value="30000">$30k</option><option value="50000">$50k</option><option value="100000">$100k</option><option value="130000">$130k</option><option value="150000">$150k</option><option value="200000">$200k</option><option value="250000">$250k</option><option value="300000">$300k</option><option value="350000">$350k</option><option value="400000">$400k</option><option value="450000">$450k</option><option value="500000">$500k</option><option value="550000">$550k</option><option value="600000">$600k</option><option value="650000">$650k</option><option value="700000">$700k</option><option value="750000">$750k</option><option value="800000">$800k</option><option value="850000">$850k</option><option value="900000">$900k</option><option value="950000">$950k</option><option value="1000000">$1m</option><option value="1100000">$1.1m</option><option value="1200000">$1.2m</option><option value="1250000">$1.25m</option><option value="1400000">$1.4m</option><option value="1500000">$1.5m</option><option value="1600000">$1.6m</option><option value="1700000">$1.7m</option><option value="1750000">$1.75m</option><option value="1800000">$1.8m</option><option value="1900000">$1.9m</option><option value="2000000">$2m</option><option value="2250000">$2.25m</option><option value="2500000">$2.5m</option><option value="2750000">$2.75m</option><option value="3000000">$3m</option><option value="3500000">$3.5m</option><option value="4000000">$4m</option><option value="5000000">$5m</option><option value="10000000">$10m</option><option value="20000000">$20m</option><option value="" style="display: none; visibility: hidden;">Custom</option>
+									<option value="0">No Min</option>
+                                    <option value="10000">$10k</option>
+                                    <option value="20000">$20k</option>
+                                    <option value="30000">$30k</option>
+                                    <option value="50000">$50k</option>
+                                    <option value="100000">$100k</option>
+                                    <option value="130000">$130k</option>
+                                    <option value="150000">$150k</option>
+                                    <option value="200000">$200k</option>
+                                    <option value="250000">$250k</option>
+                                    <option value="300000">$300k</option>
+                                    <option value="350000">$350k</option>
+                                    <option value="400000">$400k</option>
+                                    <option value="450000">$450k</option>
+                                    <option value="500000">$500k</option>
+                                    <option value="550000">$550k</option>
+                                    <option value="600000">$600k</option>
+                                    <option value="650000">$650k</option>
+                                    <option value="700000">$700k</option>
+                                    <option value="750000">$750k</option>
+                                    <option value="800000">$800k</option>
+                                    <option value="850000">$850k</option>
+                                    <option value="900000">$900k</option>
+                                    <option value="950000">$950k</option>
+                                    <option value="1000000">$1m</option>
+                                    <option value="1100000">$1.1m</option>
+                                    <option value="1200000">$1.2m</option>
+                                    <option value="1250000">$1.25m</option>
+                                    <option value="1400000">$1.4m</option>
+                                    <option value="1500000">$1.5m</option>
+                                    <option value="1600000">$1.6m</option>
+                                    <option value="1700000">$1.7m</option>
+                                    <option value="1750000">$1.75m</option>
+                                    <option value="1800000">$1.8m</option>
+                                    <option value="1900000">$1.9m</option>
+                                    <option value="2000000">$2m</option>
+                                    <option value="2250000">$2.25m</option>
+                                    <option value="2500000">$2.5m</option>
+                                    <option value="2750000">$2.75m</option>
+                                    <option value="3000000">$3m</option>
+                                    <option value="3500000">$3.5m</option>
+                                    <option value="4000000">$4m</option>
+                                    <option value="5000000">$5m</option>
+                                    <option value="10000000">$10m</option>
+                                    <option value="20000000">$20m</option>
+                                    <option value="" style="display: none; visibility: hidden;">Custom</option>
 								</select>
 								<i class="iconDownOpen"></i>
 							</li>
 							<li class="arrow-forward">–</li>
 							<li>
 								<select id="maxPrice">
-									<option value="*">No Max</option><option value="10000">$10k</option><option value="20000">$20k</option><option value="30000">$30k</option><option value="50000">$50k</option><option value="100000">$100k</option><option value="130000">$130k</option><option value="150000">$150k</option><option value="200000">$200k</option><option value="250000">$250k</option><option value="300000">$300k</option><option value="350000">$350k</option><option value="400000">$400k</option><option value="450000">$450k</option><option value="500000">$500k</option><option value="550000">$550k</option><option value="600000">$600k</option><option value="650000">$650k</option><option value="700000">$700k</option><option value="750000">$750k</option><option value="800000">$800k</option><option value="850000">$850k</option><option value="900000">$900k</option><option value="950000">$950k</option><option value="1000000">$1m</option><option value="1100000">$1.1m</option><option value="1200000">$1.2m</option><option value="1250000">$1.25m</option><option value="1400000">$1.4m</option><option value="1500000">$1.5m</option><option value="1600000">$1.6m</option><option value="1700000">$1.7m</option><option value="1750000">$1.75m</option><option value="1800000">$1.8m</option><option value="1900000">$1.9m</option><option value="2000000">$2m</option><option value="2250000">$2.25m</option><option value="2500000">$2.5m</option><option value="2750000">$2.75m</option><option value="3000000">$3m</option><option value="3500000">$3.5m</option><option value="4000000">$4m</option><option value="5000000">$5m</option><option value="10000000">$10m</option><option value="20000000">$20m</option><option value="" style="display: none; visibility: hidden;">Custom</option>
+									<option value="0">No Max</option>
+                                    <option value="10000">$10k</option>
+                                    <option value="20000">$20k</option>
+                                    <option value="30000">$30k</option>
+                                    <option value="50000">$50k</option>
+                                    <option value="100000">$100k</option>
+                                    <option value="130000">$130k</option>
+                                    <option value="150000">$150k</option>
+                                    <option value="200000">$200k</option>
+                                    <option value="250000">$250k</option>
+                                    <option value="300000">$300k</option>
+                                    <option value="350000">$350k</option>
+                                    <option value="400000">$400k</option>
+                                    <option value="450000">$450k</option>
+                                    <option value="500000">$500k</option>
+                                    <option value="550000">$550k</option>
+                                    <option value="600000">$600k</option>
+                                    <option value="650000">$650k</option>
+                                    <option value="700000">$700k</option>
+                                    <option value="750000">$750k</option>
+                                    <option value="800000">$800k</option>
+                                    <option value="850000">$850k</option>
+                                    <option value="900000">$900k</option>
+                                    <option value="950000">$950k</option>
+                                    <option value="1000000">$1m</option>
+                                    <option value="1100000">$1.1m</option>
+                                    <option value="1200000">$1.2m</option>
+                                    <option value="1250000">$1.25m</option>
+                                    <option value="1400000">$1.4m</option>
+                                    <option value="1500000">$1.5m</option>
+                                    <option value="1600000">$1.6m</option>
+                                    <option value="1700000">$1.7m</option>
+                                    <option value="1750000">$1.75m</option>
+                                    <option value="1800000">$1.8m</option>
+                                    <option value="1900000">$1.9m</option>
+                                    <option value="2000000">$2m</option>
+                                    <option value="2250000">$2.25m</option>
+                                    <option value="2500000">$2.5m</option>
+                                    <option value="2750000">$2.75m</option>
+                                    <option value="3000000">$3m</option>
+                                    <option value="3500000">$3.5m</option>
+                                    <option value="4000000">$4m</option>
+                                    <option value="5000000">$5m</option>
+                                    <option value="10000000">$10m</option>
+                                    <option value="20000000">$20m</option>
+                                    <option value="" style="display: none; visibility: hidden;">Custom</option>
 								</select>
 								<i class="iconDownOpen"></i>
 							</li>
@@ -121,13 +211,12 @@
 					<a href="#" class="dropdown-toggle wid150" data-toggle="dropdown">All Beds<i class="iconDownOpen"></i></a>
 					<ul class="dropdown-menu wid1650">
 						<div class="btnGroup">
-							<button class='btn btn-success btnTouch btnSecondary cls_studiobtn'>Studio</button >
-							<button class="btn btn-default btnTouch ">1+</button>
-							<button class="btn btn-default btnTouch ">2+</button>
-							<button class="btn btn-default btnTouch ">3+</button>
-							<button class="btn btn-default btnTouch ">4+</button>	
+							<a href="#" class='btn btn-success btnTouch btnSecondary cls_studiobtn'>Studio</a  >
+							<a href="url_oneplus" class="btn btn-default btnTouch ">1+</a>
+							<a href="url_twoplus" class="btn btn-default btnTouch ">2+</a>
+							<a href="url_threeplus" class="btn btn-default btnTouch ">3+</a>
+							<a href="url_fourplus" class="btn btn-default btnTouch ">4+</a>	
 						</div>
-						
 						<!-- <li><a href="url_onetwobed">1~2 Beds</a></li>
 						<li><a href="url_twofourbed">2~4 Beds</a></li>
 						<li><a href="url_foursixbed">4~6 Beds</a></li> -->
@@ -173,62 +262,84 @@
 @yield('content')
 </body>
 <script type="text/javascript">
-$(document).ready(function() {
-	$('.dropdown-custom a.dropdown-toggle').click(function() {
-		$('.dropdown-custom').toggleClass('open');
-	})
-})
+    $(document).ready(function() {
+        $('.dropdown-custom a.dropdown-toggle').click(function() {
+            $('.dropdown-custom').toggleClass('open');
+        });
+        
+        $("#minPrice").change(function(){
+            var price = $(this).val();
+//            console.log("Here is the Ajax Function");
+//            console.log(price);
+//            $.ajax({
+//                url: "/url_pricefilter",
+//                type: 'GET',
+//                data: { price: price }
+//            });
+            location.href = "http://localhost:8000/url_minpricefilter?price=" + price;
+        });
+        
+        $("#maxPrice").change(function(){
+            var price = $(this).val();
+            location.href = "http://localhost:8000/url_maxpricefilter?price=" + price;
+        });
+        
+//        AJAX success response function
+//        function FilterResult(){
+//            console.log("Good");
+//        }
+    })
 </script>
 <style type="text/css">
-div.dropdown-menu-wrap {
-	position: absolute;
-	display: none;
-	z-index: 1;
-}
-.dropdown-custom.open >div.dropdown-menu-wrap {
-	display: block;
-}
-ul.dropdown-menu-custom {
-	padding: 15px 5px 10px 5px;
-    border: 1px solid #e8e9ea;
-    border-radius: 4px;
-    background: #fff;
-    overflow: hidden;
-    border-top-width: 0;
-    position: fixed;
-}
-ul.dropdown-menu-custom li {
-	position: relative;
-	float: left;
-	min-width: 160px;
-}
-ul.dropdown-menu-custom li.arrow-forward {
-	color: grey;
-	text-align: center;
-	min-width: 40px !important;
-	padding-top: 10px;
-}
-ul.dropdown-menu-custom select {
-	height: 46px!important;
-	box-sizing: border-box;
-    width: 100%;
-    padding: .6em .8em .5em;
-    border-radius: 4px;
-    border: 1px solid #cdd1d4;
-    line-height: 1.2;
-    color: grey;
-    transition: border .2s;
-    -moz-appearance:none; /* Firefox */
-    -webkit-appearance:none; /* Safari and Chrome */
-    appearance:none;
-}
-ul.dropdown-menu-custom i {
-	position: absolute;
-	right: 10px;
-	top: 10px;
-	color: grey;
-	z-index: 1000;
-}
+    div.dropdown-menu-wrap {
+        position: absolute;
+        display: none;
+        z-index: 1;
+    }
+    .dropdown-custom.open >div.dropdown-menu-wrap {
+        display: block;
+    }
+    ul.dropdown-menu-custom {
+        padding: 15px 5px 10px 5px;
+        border: 1px solid #e8e9ea;
+        border-radius: 4px;
+        background: #fff;
+        overflow: hidden;
+        border-top-width: 0;
+        position: fixed;
+    }
+    ul.dropdown-menu-custom li {
+        position: relative;
+        float: left;
+        min-width: 160px;
+    }
+    ul.dropdown-menu-custom li.arrow-forward {
+        color: grey;
+        text-align: center;
+        min-width: 40px !important;
+        padding-top: 10px;
+    }
+    ul.dropdown-menu-custom select {
+        height: 46px!important;
+        box-sizing: border-box;
+        width: 100%;
+        padding: .6em .8em .5em;
+        border-radius: 4px;
+        border: 1px solid #cdd1d4;
+        line-height: 1.2;
+        color: grey;
+        transition: border .2s;
+        -moz-appearance:none; /* Firefox */
+        -webkit-appearance:none; /* Safari and Chrome */
+        appearance:none;
+    }
+    ul.dropdown-menu-custom i {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: grey;
+        z-index: 1000;
+    }
 </style>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBibcxCybips4ljfrOE8BibQFSBVPaoKyY&libraries=places&callback=initMap" async defer></script>
 </html>

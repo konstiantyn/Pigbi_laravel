@@ -14,17 +14,20 @@ Route::get("/hilo_sort", "SiteController@decreasesort");
 Route::get("/newest", "SiteController@newestsort");
 
 // Filters URLs for the Price sort
-Route::get('ten_thirty', 'SiteController@ten_thirty');
-Route::get('url_thirty_firty', 'SiteController@thirty_firty');
-Route::get('url_forty_sixty', 'SiteController@forty_sixty');
-Route::get('url_sixty_hundred', 'SiteController@sixty_hundred');
-Route::get('url_hundred_twentyhun', 'SiteController@hundred_twentyhun');
+//Route::get('ten_thirty', 'SiteController@ten_thirty');
+//Route::get('url_thirty_firty', 'SiteController@thirty_firty');
+//Route::get('url_forty_sixty', 'SiteController@forty_sixty');
+//Route::get('url_sixty_hundred', 'SiteController@sixty_hundred');
+//Route::get('url_hundred_twentyhun', 'SiteController@hundred_twentyhun');
+Route::get("/url_minpricefilter", "SiteController@MinPricefilterfunc");
+Route::get("/url_maxpricefilter", "SiteController@MaxPricefilterfunc");
 // End
 
 // Filter URLs for the Bed sort
-Route::get('url_onetwobed', 'SiteController@Onetwofunc');
-Route::get('url_twofourbed', 'SiteController@Twofourfunc');
-Route::get('url_foursixbed', 'SiteController@Foursixfunc');
+Route::get('url_oneplus', 'SiteController@Oneplusfunc');
+Route::get('url_twoplus', 'SiteController@Twoplusfunc');
+Route::get('url_threeplus', 'SiteController@Threeplufunc');
+Route::get('url_fourplus', 'SiteController@Fourplusfunc');
 // End
 
 //Route for the Autho
