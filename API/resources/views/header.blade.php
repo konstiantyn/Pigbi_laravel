@@ -276,12 +276,12 @@
 //                type: 'GET',
 //                data: { price: price }
 //            });
-            location.href = "http://localhost:8000/url_minpricefilter?price=" + price;
+            location.href = "http://192.243.108.163/url_minpricefilter?price=" + price;
         });
         
         $("#maxPrice").change(function(){
             var price = $(this).val();
-            location.href = "http://localhost:8000/url_maxpricefilter?price=" + price;
+            location.href = "http://192.243.108.163/url_maxpricefilter?price=" + price;
         });
         
 //        AJAX success response function
