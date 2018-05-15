@@ -149,7 +149,7 @@
 				<li class="col-xs-6 col-md-4">
 					<div id="detailCard" class="cardItem" data-toggle="modal" >
 						<button class="favorite-btn">
-							<i class="iconHeartEmpty"></i>
+							<i id="icon{{$estate->id}}" data-id="icon{{$estate->id}}" class="iconHeartEmpty"></i>
 						</button>
 						<div class="gallary-show">
 							<!-- window.open('/detail?ID={{$estate->id}}', '_blank') -->
@@ -390,86 +390,95 @@
 	}
 </style>
 <script type="text/javascript">
-$(document).ready(function () {
-	var total_slides_counts = 0;
-	$('.img-grid').click(function() {
-		var id = $(this).data('id');
-		$.ajax({
-			url: "/detail",
-			method: "GET",
-			data: { ID: id },
-			success: detailView
-		});
-		// var modalImg = document.getElementById("img001");
-		// modalImg.src = "http://photos.listhub.net/CCIAORMA/21402153/1?lm=20140328T171615";
-	});
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("closeBtn")[0];
+    $(document).ready(function () {
+        var total_slides_counts = 0;
+        $('.img-grid').click(function() {
+            var id = $(this).data('id');
+            $.ajax({
+                url: "/detail",
+                method: "GET",
+                data: { ID: id },
+                success: detailView
+            });
+            // var modalImg = document.getElementById("img001");
+            // modalImg.src = "http://photos.listhub.net/CCIAORMA/21402153/1?lm=20140328T171615";
+        });
+        $('.iconHeartEmpty').click(function(){
+            console.log("Here is the click function");
+            var iconid = $(this).data('id');
+            var session = "{{session('favoper')}}";
+            if(session !== "")
+                $("#" + iconid).css("color", "red");
+            if(session == "")
+                window.location.href = "url_signin";
+        });
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("closeBtn")[0];
 
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() { 
-	  document.getElementById('myModal').style.display = "none";
-	}
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+          document.getElementById('myModal').style.display = "none";
+        }
 
-	function getFormattedPhoneNumber(num) {
-		return "(" + num.slice(0,3) + ") " + num.slice(3,6) + "-" + num.slice(6);
-	}
-	$("#myCarousel").on('slide.bs.carousel', function(evt) {
-	  // console.debug("slide transition started")
-	  $("#current_slide").text((($(this).find('.active').index())%total_slides_counts + 1));
-	  // console.log('current slide = ', $(this).find('.active').index());
-	  // console.debug('next slide = ', $(evt.relatedTarget).index())
+        function getFormattedPhoneNumber(num) {
+            return "(" + num.slice(0,3) + ") " + num.slice(3,6) + "-" + num.slice(6);
+        }
+        $("#myCarousel").on('slide.bs.carousel', function(evt) {
+          // console.debug("slide transition started")
+          $("#current_slide").text((($(this).find('.active').index())%total_slides_counts + 1));
+          // console.log('current slide = ', $(this).find('.active').index());
+          // console.debug('next slide = ', $(evt.relatedTarget).index())
 
-	});
+        });
 
-	function detailView(res) {
-		console.log(JSON.parse(res.Address));
-		$('#Taxes').text("$"+JSON.parse(res.Taxes).Tax.Amount+"/mo");
-		$('#ListPrice').text("$"+res.ListPrice);
-		$('#Bedrooms').text(res.Bedrooms);
-		$('#Bathrooms').text(res.Bathrooms);
-		$('#PropertySubType').text(res.PropertySubType);
-		$('#ListingDate').text(res.ListingDate);
-		$('#LivingArea').text(res.LivingArea);
-		// --------------------------------------
-		$('#ListingTitle').text(res.ListingTitle);
-		$('#ListingDescription').text(res.ListingDescription);
+        function detailView(res) {
+            console.log(JSON.parse(res.Address));
+            $('#Taxes').text("$"+JSON.parse(res.Taxes).Tax.Amount+"/mo");
+            $('#ListPrice').text("$"+res.ListPrice);
+            $('#Bedrooms').text(res.Bedrooms);
+            $('#Bathrooms').text(res.Bathrooms);
+            $('#PropertySubType').text(res.PropertySubType);
+            $('#ListingDate').text(res.ListingDate);
+            $('#LivingArea').text(res.LivingArea);
+            // --------------------------------------
+            $('#ListingTitle').text(res.ListingTitle);
+            $('#ListingDescription').text(res.ListingDescription);
 
-		console.log(JSON.parse(res.Photos).Photo);
-		var photos = "";
-		var indicators = "";
-		for (var i = 0; i < JSON.parse(res.Photos).Photo.length; ++ i) {
-			if (i == 0) {
-				indicators += '<li data-target="#myCarousel" data-slide-to="' + i + '" class="active"></li>';
-				photos += 	'<div class="item active">' +
-							'<img class="center" src="' + JSON.parse(res.Photos).Photo[i].MediaURL +
-							'" alt="New York"></div>';
-			}
-			else {
-				indicators += '<li data-target="#myCarousel" data-slide-to="' + i + '"></li>'
-				photos += 	'<div class="item">' +
-							'<img class="center" src="' + JSON.parse(res.Photos).Photo[i].MediaURL +
-							'" alt="New York"></div>';
-			}
-		}
-		total_slides_counts = JSON.parse(res.Photos).Photo.length;
-		document.getElementById("Photos").innerHTML = photos;
-		document.getElementById("photo_indicators").innerHTML = indicators;
-		$("#total_slides_counts").text(total_slides_counts);
-		// --------------------------------------
-		$("#FullName").text(JSON.parse(res.ListingParticipants).Participant.FirstName + " " + JSON.parse(res.ListingParticipants).Participant.LastName);
-		$("#PrimaryContactPhone").text(getFormattedPhoneNumber(JSON.parse(res.ListingParticipants).Participant.PrimaryContactPhone));
-		$("#OfficePhone").text(getFormattedPhoneNumber(JSON.parse(res.ListingParticipants).Participant.OfficePhone));
-		$("#Address1").text(JSON.parse(res.Address)["commons:FullStreetAddress"]);
-		$("#Address2").text(JSON.parse(res.Address)["commons:City"] + " " + JSON.parse(res.Address)["commons:StateOrProvince"] + " " + JSON.parse(res.Address)["commons:PostalCode"]);
-		// ---------------------------------------
-		$('#myModal').show();		
-	}
+            console.log(JSON.parse(res.Photos).Photo);
+            var photos = "";
+            var indicators = "";
+            for (var i = 0; i < JSON.parse(res.Photos).Photo.length; ++ i) {
+                if (i == 0) {
+                    indicators += '<li data-target="#myCarousel" data-slide-to="' + i + '" class="active"></li>';
+                    photos += 	'<div class="item active">' +
+                                '<img class="center" src="' + JSON.parse(res.Photos).Photo[i].MediaURL +
+                                '" alt="New York"></div>';
+                }
+                else {
+                    indicators += '<li data-target="#myCarousel" data-slide-to="' + i + '"></li>'
+                    photos += 	'<div class="item">' +
+                                '<img class="center" src="' + JSON.parse(res.Photos).Photo[i].MediaURL +
+                                '" alt="New York"></div>';
+                }
+            }
+            total_slides_counts = JSON.parse(res.Photos).Photo.length;
+            document.getElementById("Photos").innerHTML = photos;
+            document.getElementById("photo_indicators").innerHTML = indicators;
+            $("#total_slides_counts").text(total_slides_counts);
+            // --------------------------------------
+            $("#FullName").text(JSON.parse(res.ListingParticipants).Participant.FirstName + " " + JSON.parse(res.ListingParticipants).Participant.LastName);
+            $("#PrimaryContactPhone").text(getFormattedPhoneNumber(JSON.parse(res.ListingParticipants).Participant.PrimaryContactPhone));
+            $("#OfficePhone").text(getFormattedPhoneNumber(JSON.parse(res.ListingParticipants).Participant.OfficePhone));
+            $("#Address1").text(JSON.parse(res.Address)["commons:FullStreetAddress"]);
+            $("#Address2").text(JSON.parse(res.Address)["commons:City"] + " " + JSON.parse(res.Address)["commons:StateOrProvince"] + " " + JSON.parse(res.Address)["commons:PostalCode"]);
+            // ---------------------------------------
+            $('#myModal').show();		
+        }
 
-	$('.cls_mapbtn').click(function() {
-		$('#main_content').toggleClass('toggle_map')
-	})
-});
+        $('.cls_mapbtn').click(function() {
+            $('#main_content').toggleClass('toggle_map')
+        })
+    });
 </script>
 @endsection
 

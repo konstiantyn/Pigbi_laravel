@@ -43,6 +43,7 @@ class LoginController extends Controller
         $var = new User;
         $var = User::where('name', $data->username)->where('password', $data->password)->first();
         if (isset($var)) {
+            session(['favoper' => 'Enable']);
             return redirect('url_homepage');
         }
         return redirect('url_signin');

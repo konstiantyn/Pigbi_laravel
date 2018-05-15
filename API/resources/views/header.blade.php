@@ -54,7 +54,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li class="saved"><a href="#">Saved</a></li>
 				<li class="cls_autho">
-					<button onclick="gosigninfunc()" type="submit" class="btn navbar-btn btn-white" style="padding: 3px 10px; font-size: 14px; font-weight: 550;">Sign in</button>
+					<button onclick="gosigninfunc()" type="submit" class="btn navbar-btn btn-white cls_signinbtn" style="padding: 3px 10px; font-size: 14px; font-weight: 550; color: white;">Sign in</button>
 		            <button onclick="gosignupfunc()" type="submit" class="btn navbar-btn btn-success"  style="border: none; padding: 3px 10px; font-size: 15px; font-weight: 550;">Register</button>
 				</li>
 			</ul>

@@ -16,15 +16,14 @@
 			<form name="login-form" class="login-form" action="url_signin" method="post">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			    <div class="header">
-			    <h1>Signin Form</h1>
+                    <h1>Signin Form</h1>
 			    </div>
 			    <div class="content">
-				<input name="username" type="text" class="input username cls_input" value="Username" onfocus="this.value=''" />
-			    <input name="password" type="password" class="input password cls_input" value="Password" onfocus="this.value=''" />
+                    <input name="username" type="text" class="input username cls_input" value="Username" onfocus="this.value=''" />
+                    <input name="password" type="password" class="input password cls_input" value="Password" onfocus="this.value=''" />
 			    </div>
 			    <div class="footer">
-			    <input type="submit" name="submit" value="Signin" class="button" />
-			    <input type="submit" name="submit" value="Register" class="register" />
+                    <input type="submit" name="submit" value="Signin" class="button" />
 			    </div>
 			</form>
 		</div>
