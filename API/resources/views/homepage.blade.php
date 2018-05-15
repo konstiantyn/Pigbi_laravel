@@ -36,8 +36,8 @@
 						<form action="/search" role="search" method="POST">
 							<div class="row" style="margin: 0 1px;">
 								<div class="col-xs-10 nopadding">
-										<input type="hidden" name="_token" value="{{ csrf_token() }}">
-										<input type="text" id="statnewname" name="Address" class="form-control" placeholder="Search">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <input type="text" id="statnewname" name="Address" class="form-control" placeholder="Search">
 								</div>
 								<div class="col-xs-2 nopadding">
 									<button type="submit" class="btn btn-default">
@@ -408,6 +408,7 @@
             var iconid = $(this).data('id');
             var session = "{{session('favoper')}}";
             if(session !== "")
+                $("#" + iconid).attr("class", "fa fa-heart");
                 $("#" + iconid).css("color", "red");
             if(session == "")
                 window.location.href = "url_signin";
