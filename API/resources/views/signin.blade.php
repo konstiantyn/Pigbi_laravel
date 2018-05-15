@@ -19,6 +19,11 @@
                     <h1>Signin Form</h1>
 			    </div>
 			    <div class="content">
+                    @if (isset($error))
+                        <div class="cls_errorcode">
+                            <h4>{{$error}}</h4>
+                        </div>
+                    @endif
                     <input name="username" type="text" class="input username cls_input" value="Username" onfocus="this.value=''" />
                     <input name="password" type="password" class="input password cls_input" value="Password" onfocus="this.value=''" />
 			    </div>

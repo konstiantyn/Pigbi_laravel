@@ -17,12 +17,17 @@
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			    <div class="header">
 				    <h1>Signup Form</h1>
-				    </div>
-				    <div class="content">
-					<input name="username" required type="text" class="input username cls_input" value="Username" onfocus="this.value=''" />
-					<input name="email" required type="email" style="margin-top: 10%;" class="input username cls_input" value="Email@email.com" onfocus="this.value=''" />
-				    <input name="password" required type="password" class="input password cls_input" value="Password" onfocus="this.value=''" />
-			    </div>
+				</div>
+                <div class="content">
+                    @if (isset($error))
+                        <div class="cls_errorcode">
+                            <h4>{{$error}}</h4>
+                        </div>
+                    @endif
+                    <input name="username" required type="text" class="input username cls_input" value="Username" onfocus="this.value=''" />
+                    <input name="email" required type="email" style="margin-top: 10%;" class="input username cls_input" value="Email@email.com" onfocus="this.value=''" />
+                    <input name="password" required type="password" class="input password cls_input" value="Password" onfocus="this.value=''" />
+                </div>
 			    <div class="footer">
 				    <input type="submit" name="submit" value="Signup" class="button" />
 				    <!-- <input type="submit" name="submit" value="Register" class="register" /> -->

@@ -46,6 +46,7 @@ class LoginController extends Controller
             session(['favoper' => 'Enable']);
             return redirect('url_homepage');
         }
-        return redirect('url_signin');
+        $loginerror = "No matched!";
+        return view('signin', ['error' => $loginerror]);
     }
 }

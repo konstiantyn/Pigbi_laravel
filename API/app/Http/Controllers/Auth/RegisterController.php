@@ -61,13 +61,18 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(Request $data)
+    protected function create(Request $request)
     {
+        $dbvar = new User;
+        $result = User::where('email', $request['email'])->first();
+        if(isset($result)){
+            $data = "Duplicated Email!";
+            return view('signup', ['error' => $data]);
+        }
         User::create([
-            'name' => $data['username'],
-            'email' => $data['email'],
-            'password' => $data['password'],
-            // 'password' => $data['password'],
+            'name' => $request['username'],
+            'email' => $request['email'],
+            'password' => $request['password'],
         ]);
         return redirect('url_homepage');
     }

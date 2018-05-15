@@ -11,6 +11,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script type="text/javascript">
 			// console.log('adfadfadfadfad');
 		var searchresult = {!! json_encode($estates) !!};
@@ -101,7 +102,7 @@
 				<li class="dropdown-custom dropdown" id="res_anyprice">
 					<a href="#" class="dropdown-toggle wid150">Any Price<i class="iconDownOpen"></i></a>
 					<div class="dropdown-menu-wrap">
-						<ul class="dropdown-menu-custom">
+						<ul id="dropdown" class="dropdown-menu-custom">
 							<li>
 								<select id="minPrice">
 									<option value="0">No Min</option>
@@ -267,7 +268,9 @@
         $('.dropdown-custom a.dropdown-toggle').click(function() {
             $('.dropdown-custom').toggleClass('open');
         });
-        
+//        $("#dropdown").mouseleave(function(){
+//           $("#dropdown").css("display", "none");
+//        });
         $("#minPrice").change(function(){
             var price = $(this).val();
 //            console.log("Here is the Ajax Function");

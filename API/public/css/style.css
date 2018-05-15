@@ -790,3 +790,13 @@ i.iconDiskPoor,span.iconDiskPoor{color:#fff;background:#e13009}
          -o-transform-origin: 100% 100%;
             transform-origin :100% 100%;
 }
+
+.cls_errorcode {
+    text-align: center;
+    color: firebrick;
+}
+
+.cls_pos {
+    margin-right: 6px;
+    margin-top: 5px;
+}

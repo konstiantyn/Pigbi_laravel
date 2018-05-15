@@ -326,7 +326,6 @@
 							<p>LA is always so much fun!</p>
 						</div>
 					</div>
-
 					<div class="item">
 						<img src="http://photos.listhub.net/CCIAORMA/21402153/9?lm=20140328T171615" alt="Chicago">
 						<div class="carousel-caption">
@@ -341,7 +340,6 @@
 							<p>Thank you, Chicago!</p>
 						</div>
 					</div>
-
 					<div class="item">
 						<img src="http://photos.listhub.net/CCIAORMA/21402153/29?lm=20140328T171615" alt="New York">
 						<div class="carousel-caption">
@@ -408,7 +406,7 @@
             var iconid = $(this).data('id');
             var session = "{{session('favoper')}}";
             if(session !== "")
-                $("#" + iconid).attr("class", "fa fa-heart");
+                $("#" + iconid).attr("class", "fa fa-heart cls_pos");
                 $("#" + iconid).css("color", "red");
             if(session == "")
                 window.location.href = "url_signin";
@@ -475,10 +473,9 @@
             // ---------------------------------------
             $('#myModal').show();		
         }
-
         $('.cls_mapbtn').click(function() {
             $('#main_content').toggleClass('toggle_map')
-        })
+        });
     });
 </script>
 @endsection
