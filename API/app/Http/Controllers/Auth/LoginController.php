@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\User;
+use App\favorite;
 
 class LoginController extends Controller
 {
@@ -44,7 +46,12 @@ class LoginController extends Controller
         $var = User::where('name', $data->username)->where('password', $data->password)->first();
         if (isset($var)) {
             session(['favoper' => 'Enable']);
-            return redirect('url_homepage');
+            session(['userid' => $var->id]);
+            $userid = $var->id;
+            $favorresult = favorite::select("houseid")->where('userid', $userid)->get();
+            $favornum = $favorresult->count();
+            $estates = DB::table('estates')->paginate(30);
+            return view('homepage', ['estates' => $estates, 'favorResult' => $favorresult, "favornum" => $favornum]);
         }
         $loginerror = "No matched!";
         return view('signin', ['error' => $loginerror]);

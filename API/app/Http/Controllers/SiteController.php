@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\favorite;
 /*use Prewk\XmlStringStreamer;
 use Prewk\XmlStringStreamer\Stream;
 use Prewk\XmlStringStreamer\Parser;*/
@@ -118,6 +119,22 @@ class SiteController extends Controller
         $price = $request->get("price");
         $data = \App\Estate::whereBetween('ListPrice', [10000, $price])->paginate(30);
         return view('homepage', ['estates' => $data]);
+    }
+    
+    public function Favoritefunc(Request $request){
+        $data1 = $request->get("userid");
+        $data2 = $request->get("houseid");
+        $DBvar = new favorite();
+        $DBvar->userid = $data1;
+        $DBvar->houseid = $data2;
+        $DBvar->save();
+    }
+    
+    public function Favoriteajaxfunc(){
+        $userid = session("userid");
+        $db = new favorite();
+        $result = $db->select("houseid")->where("userid", $userid)->get();
+        return json_encode($result);
     }
     
 //    public function ten_thirty() {

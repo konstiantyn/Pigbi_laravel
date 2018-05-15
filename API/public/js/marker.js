@@ -155,7 +155,7 @@ _MapObj.prototype.init = function () {
   $('div.cardItem').hover(
     function() {
         // Called when the mouse enters the element
-        var index = $(this).find('img.img-grid').data('id') % 30;
+        var index = $(this).find('img.img-grid').data('id') % 30 - 1;
         document.getElementById("wrappigbimap"+index).style.zIndex = "400";
         $('#pigbimap'+index).show();
         previous_elemet1 = document.getElementById("wrappigbimap"+index);

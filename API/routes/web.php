@@ -31,11 +31,14 @@ Route::get('url_fourplus', 'SiteController@Fourplusfunc');
 // End
 
 //Route for the Autho
-Route::get('url_signin', function(){  return view('signin'); });
+Route::get('url_signin', function(){ return view('signin'); });
 Route::get('url_signup', function(){ return view('signup', ['error' => ""]); });
 //End
 // Route::get('/saved', 'SiteController@saved');
 // Route::get('/', 'SiteController@approved');
+
+Route::get("/url_favorite", "SiteController@Favoritefunc");
+Route::get("/url_favoajax", "SiteController@Favoriteajaxfunc");
 
 Auth::routes();
 

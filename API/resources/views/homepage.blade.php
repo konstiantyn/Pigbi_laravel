@@ -1,7 +1,6 @@
 @extends('header')
 @section('content')
 <div id="main_content" class="col-sm-12 content" style="/*margin-top: 110px;*/ padding: 0px !important;">
-
 	<div id="res_gallery" class="col-md-6 col-xs-12" style="padding: 0px !important;">
 		<div class="filter-options" style="background: #ddd;">
 			<div id="filter-option-desktop">
@@ -149,15 +148,15 @@
 				<li class="col-xs-6 col-md-4">
 					<div id="detailCard" class="cardItem" data-toggle="modal" >
 						<button class="favorite-btn">
-							<i id="icon{{$estate->id}}" data-id="icon{{$estate->id}}" class="iconHeartEmpty"></i>
+							<i id="icon{{$estate->id}}" data-id="{{$estate->id}}" class="iconHeartEmpty"></i>
 						</button>
 						<div class="gallary-show">
 							<!-- window.open('/detail?ID={{$estate->id}}', '_blank') -->
 							<!-- <a href="#detailCardModal" data-toggle="modal" onclick="javascript:detailView({{$estate->id}})" style="display:inline-block;"> -->
 							@if(gettype(json_decode($estate->Photos)->Photo) == "array")
-							<img id="img{{$estate->id}}" data-id="{{$estate->id}}" class="img-grid" src="{{(json_decode($estate->Photos)->Photo[0]->MediaURL)}}"/>
+                                <img id="img{{$estate->id}}" data-id="{{$estate->id}}" class="img-grid" src="{{(json_decode($estate->Photos)->Photo[0]->MediaURL)}}"/>
 							@else
-							<img id="img{{$estate->id}}" data-id="{{$estate->id}}" class="img-grid" src="{{(json_decode($estate->Photos)->Photo->MediaURL)}}" />
+                                <img id="img{{$estate->id}}" data-id="{{$estate->id}}" class="img-grid" src="{{(json_decode($estate->Photos)->Photo->MediaURL)}}" />
 							@endif
 							<!-- Putting Label on Images -->
 							<!-- <ul>
@@ -401,33 +400,47 @@
             // var modalImg = document.getElementById("img001");
             // modalImg.src = "http://photos.listhub.net/CCIAORMA/21402153/1?lm=20140328T171615";
         });
+        // Function for the Red Heart Icon
         $('.iconHeartEmpty').click(function(){
-            console.log("Here is the click function");
             var iconid = $(this).data('id');
+            console.log(iconid);
             var session = "{{session('favoper')}}";
             if(session !== "")
-                $("#" + iconid).attr("class", "fa fa-heart cls_pos");
-                $("#" + iconid).css("color", "red");
+                $("#icon" + iconid).attr("class", "fa fa-heart cls_pos");
+                $("#icon" + iconid).css("color", "red");
+                var user = "{{session("userid")}}";
+                $.ajax({
+                    url: "/url_favorite",
+                    method: "GET",
+                    data: {
+                        userid: user,
+                        houseid: iconid
+                    },
+                    success: Responsefunc
+                });
             if(session == "")
                 window.location.href = "url_signin";
         });
+    
+        function Responsefunc(res) {
+            console.log(res);
+        }
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("closeBtn")[0];
 
         // When the user clicks on <span> (x), close the modal
-        span.onclick = function() { 
-          document.getElementById('myModal').style.display = "none";
+        span.onclick = function() {
+            document.getElementById('myModal').style.display = "none";
         }
 
         function getFormattedPhoneNumber(num) {
             return "(" + num.slice(0,3) + ") " + num.slice(3,6) + "-" + num.slice(6);
         }
         $("#myCarousel").on('slide.bs.carousel', function(evt) {
-          // console.debug("slide transition started")
-          $("#current_slide").text((($(this).find('.active').index())%total_slides_counts + 1));
-          // console.log('current slide = ', $(this).find('.active').index());
-          // console.debug('next slide = ', $(evt.relatedTarget).index())
-
+            // console.debug("slide transition started")
+            $("#current_slide").text((($(this).find('.active').index())%total_slides_counts + 1));
+            // console.log('current slide = ', $(this).find('.active').index());
+            // console.debug('next slide = ', $(evt.relatedTarget).index());
         });
 
         function detailView(res) {

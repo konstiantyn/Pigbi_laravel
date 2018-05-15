@@ -345,6 +345,18 @@
         z-index: 1000;
     }
 </style>
+    
+<script>
+    $(function() {
+        $.get('/url_favoajax', function(data) {
+            data = JSON.parse(data);
+            for (var i = 0; i < data.length; i++) {
+                $("#icon" + data[i]['houseid']).attr("class", "fa fa-heart cls_pos");
+                $("#icon" + data[i]['houseid']).css("color", "red");
+            }
+        })
+    });
+</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBibcxCybips4ljfrOE8BibQFSBVPaoKyY&libraries=places&callback=initMap" async defer></script>
 </html>
 
